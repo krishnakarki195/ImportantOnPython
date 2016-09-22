@@ -1,0 +1,535 @@
+key2gyaan@key2gyaan ~/Documents/Technical/Projects/batch-46 $ ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 1.2.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+help> topic
+no Python documentation found for 'topic'
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+/usr/lib/python2.7/dist-packages/gobject/constants.py:24: Warning: g_boxed_type_register_static: assertion 'g_type_from_name (name) == 0' failed
+  import gobject._gobject
+No handlers could be found for logger "oneconf.distributor"
+/usr/share/themes/MBuntu-Y-For-Gnome-Fallback/gtk-2.0/widgets/panel.rc:18: Unable to locate image file in pixmap_path: "images/panel/panel-normal.svg"
+/usr/share/themes/MBuntu-Y-For-Gnome-Fallback/gtk-2.0/widgets/panel.rc:21: Background image options specified without filename
+/usr/share/themes/MBuntu-Y-For-Gnome-Fallback/gtk-2.0/widgets/panel.rc:27: Unable to locate image file in pixmap_path: "images/panel/panel-active.svg"
+/usr/share/themes/MBuntu-Y-For-Gnome-Fallback/gtk-2.0/widgets/panel.rc:30: Background image options specified without filename
+/usr/share/themes/MBuntu-Y-For-Gnome-Fallback/gtk-2.0/widgets/panel.rc:61: error: invalid string constant "button", expected valid string constant
+/usr/lib/python2.7/dist-packages/gtk-2.0/gtk/__init__.py:127: RuntimeWarning: PyOS_InputHook is not available for interactive use of PyGTK
+  set_interactive(1)
+/usr/lib/python2.7/dist-packages/zim/gui/__init__.py:220: GtkWarning: Theme directory place/72 of theme MBuntu-OSX has no size field
+
+  pixbuf = icon_theme.load_icon(name, 24, 0)
+ANSI                _pyio               gi                  pyparsing
+AptUrl              _random             gio                 pysqlite2
+BaseHTTPServer      _sha                glib                pytz
+Bastion             _sha256             glob                quopri
+BeautifulSoup       _sha512             gnome               random
+BeautifulSoupTests  _smbc               gnomecanvas         re
+CDROM               _socket             gnomekeyring        readline
+CGIHTTPServer       _sqlite3            gnomevfs            reportlab
+Canvas              _sre                gobject             repr
+CommandNotFound     _ssl                goocanvas           requests
+ConfigParser        _strptime           google              resource
+Cookie              _struct             grp                 rexec
+Crypto              _symtable           gtk                 rfc822
+DLFCN               _sysconfigdata      gtksourceview2      rlcompleter
+Dialog              _sysconfigdata_nd   gtkunixprint        rmagic
+DocXMLRPCServer     _testcapi           gzip                robotparser
+FSM                 _threading_local    hashlib             roman
+FileDialog          _warnings           heapq               runpy
+FixTk               _weakref            hmac                samba
+HTMLParser          _weakrefset         hotshot             sched
+IN                  abc                 html5lib            screen
+IPython             aifc                htmlentitydefs      select
+Image               antigravity         htmllib             serial
+ImageChops          anydbm              httplib             sessioninstaller
+ImageColor          apt                 httplib2            sets
+ImageCrackCode      apt_inst            ihooks              setuptools
+ImageDraw           apt_pkg             imaplib             sexy
+ImageEnhance        aptdaemon           imghdr              sgmllib
+ImageFile           aptsources          imp                 sha
+ImageFileIO         argparse            importlib           shelve
+ImageFilter         array               imputil             shlex
+ImageFont           ast                 inspect             shutil
+ImageGL             asynchat            io                  signal
+ImageGrab           asyncore            itertools           simplegeneric
+ImageMath           atexit              jinja2              sip
+ImageOps            atk                 json                sipconfig
+ImagePalette        audiodev            keyword             sipconfig_nd
+ImagePath           audioop             ldb                 site
+ImageQt             autoreload          lib2to3             sitecustomize
+ImageSequence       axi                 libvboxjxpcom       six
+ImageStat           base64              libxml2             smbc
+ImageTk             bdb                 libxml2mod          smtpd
+ImageWin            binascii            linecache           smtplib
+MimeWriter          binhex              linuxaudiodev       sndhdr
+MySQLdb             bisect              locale              socket
+ORBit               bonobo              lockfile            sphinx
+OpenSSL             bsddb               logging             spwd
+PAM                 bz2                 lsb_release         spyderlib
+PIL                 cPickle             lxml                spyderplugins
+PSDraw              cProfile            macpath             sqlite3
+PngImagePlugin      cStringIO           macurl2path         sre
+PyQt4               cairo               mailbox             sre_compile
+Queue               calendar            mailcap             sre_constants
+ScrolledText        caribou             mako                sre_parse
+SimpleDialog        cgi                 markupbase          ssl
+SimpleHTTPServer    cgitb               markupsafe          stat
+SimpleXMLRPCServer  chardet             marshal             statvfs
+SocketServer        chunk               math                storemagic
+StringIO            cmath               matplotlib          string
+TYPES               cmd                 md5                 stringold
+Tix                 code                memory_profiler     stringprep
+Tkconstants         codecs              mhlib               strop
+Tkdnd               codeop              mimetools           struct
+Tkinter             collections         mimetypes           subprocess
+UbuntuSystemService colorama            mimify              sunau
+UserDict            colorsys            miniterm            sunaudio
+UserList            command             mlt                 symbol
+UserString          commands            mmap                sympyprinting
+VBoxAuth            compileall          modulefinder        symtable
+VBoxAuthSimple      compiler            mpl_toolkits        sys
+VBoxDD              configglue          multifile           sysconfig
+VBoxDD2             configobj           multiprocessing     syslog
+VBoxDDU             contextlib          mutex               tabnanny
+VBoxDbg             cookielib           mysql               talloc
+VBoxDragAndDropSvc  copy                netrc               tarfile
+VBoxGuestControlSvc copy_reg            new                 tdb
+VBoxGuestPropSvc    crypt               nis                 telnetlib
+VBoxHeadless        csv                 nntplib             tempfile
+VBoxHostChannel     ctypes              ntdb                termios
+VBoxKeyboard        cups                ntpath              test
+VBoxNetDHCP         cupshelpers         nturl2path          tests
+VBoxNetNAT          curl                numbers             textwrap
+VBoxOGLhostcrutil   curses              numpy               this
+VBoxOGLhosterrorspu cv                  oauthlib            thread
+VBoxOGLrenderspu    cv2                 octavemagic         threading
+VBoxPython          cythonmagic         oneconf             tidy
+VBoxPython2_7       datetime            opcode              time
+VBoxREM             dateutil            openshot            timeit
+VBoxRT              dbhash              operator            tkColorChooser
+VBoxSDL             dbm                 optparse            tkCommonDialog
+VBoxSVGA3D          dbus                os                  tkFileDialog
+VBoxSharedClipboard deb822              os2emxpath          tkFont
+VBoxSharedCrOpenGL  debconf             ossaudiodev         tkMessageBox
+VBoxSharedFolders   debian              pango               tkSimpleDialog
+VBoxVMM             debian_bundle       pangocairo          toaiff
+VBoxXPCOM           debtagshw           parallelmagic       token
+VBoxXPCOMC          decimal             paramiko            tokenize
+VirtualBox          decorator           parser              tornado
+_LWPCookieJar       defer               parted              trace
+_MozillaCookieJar   difflib             pdb                 traceback
+__builtin__         dircache            pexpect             ttk
+__future__          dirspec             pickle              tty
+_abcoll             dis                 pickletools         turtle
+_ast                distlib             pilconvert          twisted
+_bisect             distutils           pildriver           types
+_bsddb              django              pilfile             ubuntu_sso
+_codecs             dns                 pilfont             unicodedata
+_codecs_cn          doctest             pilprint            unittest
+_codecs_hk          docutils            pip                 urllib
+_codecs_iso2022     drv_libxml2         pipes               urllib2
+_codecs_jp          dsextras            piston_mini_client  urllib3
+_codecs_kr          dumbdbm             pkg_resources       urlparse
+_codecs_tw          dummy_thread        pkgutil             user
+_collections        dummy_threading     platform            uu
+_csv                dummyserver         plistlib            uuid
+_ctypes             duplicity           popen2              validate
+_ctypes_test        easy_install        poplib              vboxapi
+_curses             email               posix               vboxshell
+_curses_panel       encodings           posixfile           virtualenv
+_dbus_bindings      errno               posixpath           vte
+_dbus_glib_bindings exceptions          pprint              warnings
+_elementtree        fcntl               profile             wave
+_functools          fdpexpect           pstats              weakref
+_hashlib            feedparser          psutil              webbrowser
+_heapq              filecmp             pty                 webkit
+_hotshot            fileinput           pwd                 whichdb
+_io                 fnmatch             pxssh               wsgiref
+_json               formatter           py_compile          xapian
+_locale             fpectl              pyatspi             xdg
+_lsprof             fpformat            pyclbr              xdrlib
+_markerlib          fractions           pycurl              xml
+_md5                ftplib              pydoc               xmllib
+_mlt                functools           pydoc_data          xmlrpclib
+_multibytecodec     future_builtins     pyexpat             xxsubtype
+_multiprocessing    gc                  pygments            zim
+_mysql              gconf               pygtk               zipfile
+_mysql_exceptions   gdbm                pygtkcompat         zipimport
+_osx_support        genericpath         pyinotify           zlib
+_ped                getopt              pylab               zmq
+_psutil_linux       getpass             pynotify            zope
+_psutil_posix       gettext             pyodbc              
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose descriptions contain the word "spam".
+
+help> quit()
+no Python documentation found for 'quit()'
+
+help> quit
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+
+In [2]: my_string="python"
+
+In [3]: my_string.
+my_string.capitalize  my_string.expandtabs  my_string.isdigit     my_string.ljust       my_string.rindex      my_string.splitlines  my_string.upper
+my_string.center      my_string.find        my_string.islower     my_string.lower       my_string.rjust       my_string.startswith  my_string.zfill
+my_string.count       my_string.format      my_string.isspace     my_string.lstrip      my_string.rpartition  my_string.strip       
+my_string.decode      my_string.index       my_string.istitle     my_string.partition   my_string.rsplit      my_string.swapcase    
+my_string.encode      my_string.isalnum     my_string.isupper     my_string.replace     my_string.rstrip      my_string.title       
+my_string.endswith    my_string.isalpha     my_string.join        my_string.rfind       my_string.split       my_string.translate   
+
+In [3]: my_string.upper?
+Type:       builtin_function_or_method
+String Form:<built-in method upper of str object at 0x7fc2a59abfc0>
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+
+In [4]: my_string.upper??
+Type:       builtin_function_or_method
+String Form:<built-in method upper of str object at 0x7fc2a59abfc0>
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+
+In [5]: my_num = 1
+
+In [6]: my_num.
+my_num.bit_length   my_num.conjugate    my_num.denominator  my_num.imag         my_num.numerator    my_num.real         
+
+In [6]: my_num1 = 1.0
+
+In [7]: my_num1.
+my_num1.as_integer_ratio  my_num1.fromhex           my_num1.imag              my_num1.real              
+my_num1.conjugate         my_num1.hex               my_num1.is_integer        
+
+In [7]: clear
+
+
+In [8]: my_string="python"
+
+In [9]: my_string.
+my_string.capitalize  my_string.expandtabs  my_string.isdigit     my_string.ljust       my_string.rindex      my_string.splitlines  my_string.upper
+my_string.center      my_string.find        my_string.islower     my_string.lower       my_string.rjust       my_string.startswith  my_string.zfill
+my_string.count       my_string.format      my_string.isspace     my_string.lstrip      my_string.rpartition  my_string.strip       
+my_string.decode      my_string.index       my_string.istitle     my_string.partition   my_string.rsplit      my_string.swapcase    
+my_string.encode      my_string.isalnum     my_string.isupper     my_string.replace     my_string.rstrip      my_string.title       
+my_string.endswith    my_string.isalpha     my_string.join        my_string.rfind       my_string.split       my_string.translate   
+
+In [9]: clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In [10]: # printing
+
+In [11]: school = "de paul"
+
+In [12]: another_school = "st. xaviers"
+
+In [13]: town="township"
+
+In [14]: beach="blue"
+
+In [15]: 
+
+In [15]: print "my school name is school"
+my school name is school
+
+In [16]: print "my school name is ", school
+my school name is  de paul
+
+In [17]: print "my school name is" , school , " Adjancent to our school we have" , another_school , "our town is a smlmy school name is de paul  Adjancent to our school we have st. xaviers our town is a smlall  township we have a beach which has colour
+
+In [18]: print "my school name is" , school , " Adjancent to our school we have" , another_school , "our town is a sml,blue , town , "we have a beach which has colour"  
+my school name is de paul  Adjancent to our school we have st. xaviers our town is a smlall  township we have a beach which has colour---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-18-423df74afd2a> in <module>()
+----> 1 print "my school name is" , school , " Adjancent to our school we have" , another_school , "our town is a smlall " , town , "we have a beach which has colour" ,blue
+
+NameError: name 'blue' is not defined
+
+In [19]: print "my school name is" , school , " Adjancent to our school we have" , another_school , "our town is a smlall " , town , "we have a beach which has colour" , beach
+my school name is de paul  Adjancent to our school we have st. xaviers our town is a smlall  township we have a beach which has colour blue
+
+
+In [33]: my_string = "python"
+
+In [34]: # p   y   t   h   o    n
+
+In [35]: # 0   1   2   3   4    5
+
+In [36]: # 0   1   2   3   4    5 => +ve indexing or left to right
+
+In [37]: # -6  -5  -4  -3  -2  -1 => -ve indexing from right to left
+
+In [38]: # indexing
+
+In [39]: my_string[0]
+Out[39]: 'p'
+
+In [40]: my_string[5]
+Out[40]: 'n'
+
+In [41]: my_string[-1]
+Out[41]: 'n'
+
+In [33]: my_string = "python"
+
+In [34]: # p   y   t   h   o    n
+
+In [35]: # 0   1   2   3   4    5
+
+In [36]: # 0   1   2   3   4    5 => +ve indexing or left to right
+
+In [37]: # -6  -5  -4  -3  -2  -1 => -ve indexing from right to left
+
+In [38]: # indexing
+
+In [39]: my_string[0]
+Out[39]: 'p'
+
+In [40]: my_string[5]
+Out[40]: 'n'
+
+In [41]: my_string[-1]
+Out[41]: 'n'
+
+In [42]: # slicing
+
+In [43]: my_string[0:3]
+Out[43]: 'pyt'
+
+In [44]: my_string[:3]
+Out[44]: 'pyt'
+
+In [45]: my_string[3:6]
+Out[45]: 'hon'
+
+In [46]: my_string[3:]
+Out[46]: 'hon'
+
+In [47]: my_string[:3] + my_string[3:]
+Out[47]: 'python'
+
+In [48]: my_string[0:3:1]
+Out[48]: 'pyt'
+
+In [49]: my_string[0:6:1]
+Out[49]: 'python'
+
+In [50]: my_string[0:6:2]
+Out[50]: 'pto'
+
+In [51]: my_string[::2]
+Out[51]: 'pto'
+
+In [52]: my_string[::-1]
+Out[52]: 'nohtyp'
+
+In [53]: # for(1=10;i<=1;i--)
+
+
+In [55]: # playing with strings
+
+In [56]: 'a' + ' apple'
+Out[56]: 'a apple'
+
+In [57]: 'a ' * 10
+Out[57]: 'a a a a a a a a a a '
+
+In [58]: # Playing with the numbers
+
+In [59]: 1 + 1
+Out[59]: 2
+
+In [60]: 10 - 1
+Out[60]: 9
+
+In [61]: 10 % 2
+Out[61]: 0
+
+In [62]: 10 / 2
+Out[62]: 5
+
+In [63]: 10.0 / 2
+Out[63]: 5.0
+
+In [64]: 10 / 2.0
+Out[64]: 5.0
+
+In [65]: 2 ** 3
+Out[65]: 8
+
+
+In [67]: # hey this is a comment
+
+In [68]: #''' or """ -> docstrings
+
+In [69]: print " today is wednesday.
+  File "<ipython-input-69-7e052279c0eb>", line 1
+    print " today is wednesday.
+                              ^
+SyntaxError: EOL while scanning string literal
+
+
+In [70]: print """
+   ....: Today is wednesday.
+   ....: we are working on variables.
+   ....: Lets all enjoy working on python"
+   ....: ""
+   ....: """
+
+Today is wednesday.
+we are working on variables.
+Lets all enjoy working on python"
+""
+
+In [72]: # taking inputs
+
+In [73]: name = raw_input("please enter your name:")
+please enter your name:kumar
+
+In [74]: print name
+kumar
+
+In [75]: type(name)
+Out[75]: str
+
+In [76]: num = raw_input("please enter the number:")
+please enter the number:11
+
+In [77]: print num
+11
+
+In [78]: type(num)
+Out[78]: str
+
+In [79]: num = int(raw_input("please enter the number:"))
+please enter the number:11
+
+In [80]: print num
+11
+
+In [81]: type(num)
+Out[81]: int
+
+In [82]: num = int(raw_input("please enter the number:"))
+please enter the number:a
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-82-ba8496c98324> in <module>()
+----> 1 num = int(raw_input("please enter the number:"))
+
+ValueError: invalid literal for int() with base 10: 'a'
+
+
+In [84]: # input
+
+In [85]: num = input("please enter the number:")
+please enter the number:1
+
+In [86]: num1 = input("please enter the number2:")
+please enter the number2:2
+
+In [87]: num
+Out[87]: 1
+
+In [88]: num1
+Out[88]: 2
+
+In [89]: type(num)
+Out[89]: int
+
+In [90]: type(num1)
+Out[90]: int
+
+In [91]: num + num1
+Out[91]: 3
+

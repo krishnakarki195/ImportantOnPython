@@ -1,0 +1,84 @@
+key2gyaan@key2gyaan ~/Documents/Technical/Projects/batch-46 $ ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 1.2.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: # for,while
+
+In [2]: # for is a finite loop - where to start and where to end
+
+In [3]: # while is an infinite loop - conditions
+
+In [3]: # while is an infinite loop - conditions
+
+In [4]: my_string="python"
+
+In [5]: # my_string is a sequence of characters
+
+In [6]: for value in my_string:
+   ...:     print value
+   ...:     
+p
+y
+t
+h
+o
+n
+
+In [7]: for value in ('python','perl','django','devops'):
+   ...:     print value
+   ...:     
+python
+perl
+django
+devops
+
+In [9]: range?
+Type:       builtin_function_or_method
+String Form:<built-in function range>
+Namespace:  Python builtin
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+
+In [10]: range(4)
+Out[10]: [0, 1, 2, 3]
+
+In [11]: range(1,10)
+Out[11]: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+In [12]: range(1,11)
+Out[12]: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+In [13]: range(1,11,1)
+Out[13]: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+In [14]: # for(i=1;i<=10;i++)
+
+In [15]: # for(i=1;i<11;i++)
+
+In [16]: for value in range(1,11):
+   ....:     print value
+   ....:     
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+

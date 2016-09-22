@@ -1,0 +1,75 @@
+Proprietory and opensource software
+-------------------------------------
+
+Proprietory
+*****************
+
+Company A - Product A (GPL)
+ us ( customers)  - requirements 
+                  - email to the company - We will get back to you. ( 1day/1week/1year)
+		  - post in intenet -> post ( workaround/no workaround/solution)
+
+binary - exe
+
+* Customers moving away from us.
+* Frustrated customers
+
+Opensource
+***************
+
+Company A - Product A - publishes it source code in internet (own site/github)
+ us ( customers)  - requirements 
+                  - email to the company - We will get back to you. ( 1day/1week/1year)
+		  - post in intenet -> post ( workaround/no workaround/solution)
+
+ Guy B (developer) -> download the source - simulate it at home - fixes -> publishes it in internet
+		   -> Product B (GPL) (10 solutions) -> publish it internet
+
+                 reviews -> bad/vgood/excellent
+
+Company A -> Product A.1 ( 400 + 100 ) => 500 changes
+
+1 - modification - 1 developer and 1 QA engineer - 1 lac + 1 lac - 2 lacs - 800lacs - 8 crores
+
+6 months
+----------
+* Not loosing the customer base.
+* Marketing 
+* cost cutting
+
+Money
+-------
+Training - Redhat
+support  - Company A - bronze/silver/goldsupport
+
+Licence
+---------
+GPL - GNU Genearal Public License.
+GPL - any changes are modificaiton made under GPL should be registerd under GPL.
+OSF - Open source Foundation - 1960
+
+Principles
+------------
+* Opensource is about FREEdom to modify the product.
+* You can modify and re-distribute the product.
+
+
+Languages - python,perl,ruby
+Operating - ubuntu/linuxmint/zorion
+database - mariadb,nosql
+
+Opensource setup
+- oracle virtualbox
+- Linux mint
+- python
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+
+Logging:
+
+levels
+ + debug
+ 
+ tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/logging $ ssh google.com
+^C
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/logging $ ssh -v google.com
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to google.com [216.58.197.46] port 22.
+^C
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/logging $ ssh -vv google.com
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to google.com [216.58.197.46] port 22.
+^C
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/logging $ ssh -vvv google.com
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to google.com [216.58.197.46] port 22.
+
+ 
+ + info
+ 
+ tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/logging $ tail -n 5 /var/log/syslog
+May 26 05:11:20 tuxfuxhlp-VirtualBox anacron[886]: Normal exit (1 job run)
+May 26 05:17:01 tuxfuxhlp-VirtualBox CRON[2742]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 26 05:18:33 tuxfuxhlp-VirtualBox cinnamon-screensaver-dialog: pam_ecryptfs: seteuid error
+May 26 06:17:01 tuxfuxhlp-VirtualBox CRON[2994]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 26 06:25:01 tuxfuxhlp-VirtualBox CRON[3687]: (root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+
+ 
+ + warning
+ Your application is working fine. 
+ ex: disk is getting filled up - 70% 
+ 
+ + error
+ rack - 4 disks
+ 1 disk is down - Application is running good.
+ we have to rectify the error(1 disk) so that we dont error out.
+ 
+ + critical
+ your application is down.
+ 
+your default logging level is - warning
+
+References:
+https://docs.python.org/2/howto/logging.html
+https://docs.python.org/2/howto/logging-cookbook.html

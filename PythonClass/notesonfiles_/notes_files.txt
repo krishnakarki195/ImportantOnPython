@@ -1,0 +1,432 @@
+In [4]: f = open("file1.txt")
+
+In [5]: type(f)
+Out[5]: file
+
+In [6]: f
+Out[6]: <open file 'file1.txt', mode 'r' at 0x7f9532d96ae0>
+
+In [7]: # modes
+
+In [8]: # r - read mode - reading the contents of the file.
+
+In [9]: # w - write mode - writing the contents into the file. A file gets created if not there,if file exist will be truncated to zero.
+
+In [10]: # a - append mode - where we can append contents to the file.
+
+In [11]: # b - binary mode.
+
+In [12]: # rb,wb,ab
+
+In [13]: # r+ - read and write to a file.
+
+In [14]: f.
+f.close       f.encoding    f.fileno      f.isatty      f.name        f.next        f.readinto    f.readlines   f.softspace   f.truncate    f.writelines
+f.closed      f.errors      f.flush       f.mode        f.newlines    f.read        f.readline    f.seek        f.tell        f.write       f.xreadlines
+
+In [14]: f.name
+Out[14]: 'file1.txt'
+
+In [15]: f.mode
+Out[15]: 'r'
+
+In [16]: f.read?
+Type:       builtin_function_or_method
+String Form:<built-in method read of file object at 0x7f9532d96ae0>
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+
+In [17]: f.read(2)
+Out[17]: 'Th'
+
+In [18]: f.read(2)
+Out[18]: 'is'
+
+In [19]: f.read(2)
+Out[19]: ' i'
+
+In [20]: f.read(2)
+Out[20]: 's '
+
+In [21]: f.read()
+Out[21]: 'line  1.\nThis is line  2.\nThis is line  3.\nThis is line  4.\nThis is line  5.\n'
+
+In [22]: f.read()
+Out[22]: ''
+
+In [23]: f.tell()
+Out[23]: 85
+
+In [24]: f.seek?
+Type:       builtin_function_or_method
+String Form:<built-in method seek of file object at 0x7f9532d96ae0>
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+
+In [25]: f.tell?
+Type:       builtin_function_or_method
+String Form:<built-in method tell of file object at 0x7f9532d96ae0>
+Docstring:  tell() -> current file position, an integer (may be a long integer).
+
+In [26]: f.seek(0)
+
+In [27]: f.read()
+Out[27]: 'This is line  1.\nThis is line  2.\nThis is line  3.\nThis is line  4.\nThis is line  5.\n'
+
+
+In [31]: f.seek(0)
+
+In [32]: f.readline?
+Type:       builtin_function_or_method
+String Form:<built-in method readline of file object at 0x7f9532d96ae0>
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+
+In [33]: f.readline()
+Out[33]: 'This is line  1.\n'
+
+In [34]: f.readline()
+Out[34]: 'This is line  2.\n'
+
+In [35]: f.readline()
+Out[35]: 'This is line  3.\n'
+
+In [36]: f.readline()
+Out[36]: 'This is line  4.\n'
+
+In [37]: f.readline()
+Out[37]: 'This is line  5.\n'
+
+In [38]: f.readline()
+Out[38]: ''
+
+In [31]: f.seek(0)
+
+In [32]: f.readline?
+Type:       builtin_function_or_method
+String Form:<built-in method readline of file object at 0x7f9532d96ae0>
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+
+In [33]: f.readline()
+Out[33]: 'This is line  1.\n'
+
+In [34]: f.readline()
+Out[34]: 'This is line  2.\n'
+
+In [35]: f.readline()
+Out[35]: 'This is line  3.\n'
+
+In [36]: f.readline()
+Out[36]: 'This is line  4.\n'
+
+In [37]: f.readline()
+Out[37]: 'This is line  5.\n'
+
+In [38]: f.readline()
+Out[38]: ''
+
+In [40]: f.readlines?
+Type:       builtin_function_or_method
+String Form:<built-in method readlines of file object at 0x7f9532d96ae0>
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+
+In [41]: f.tell()
+Out[41]: 85
+
+In [42]: f.seek(0)
+
+In [43]: L_lines = f.readlines()
+
+In [44]: L_lines
+Out[44]: 
+['This is line  1.\n',
+ 'This is line  2.\n',
+ 'This is line  3.\n',
+ 'This is line  4.\n',
+ 'This is line  5.\n']
+
+In [45]: L_lines.append("this is line 6.\n")
+
+In [46]: L_lines
+Out[46]: 
+['This is line  1.\n',
+ 'This is line  2.\n',
+ 'This is line  3.\n',
+ 'This is line  4.\n',
+ 'This is line  5.\n',
+ 'this is line 6.\n']
+ 
+# open,modes,read,readline,readlines,tell,seek,name,mode
+
+# write
+
+In [50]: g = open("mynew_file.txt","w")
+
+In [51]: g.write?
+Type:       builtin_function_or_method
+String Form:<built-in method write of file object at 0x7f9532d96d20>
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+
+In [52]: g.write("This is a new line1.\n This is a new line2.\n This is a new line3.\nThis is a new line4.\nThis is a new line 5.\n")
+
+In [53]: # Input(Keyboard)  => cpu => output(file/screen)
+
+In [54]: # Input(Keyboard)  => i/0 buffer => cpu => i/o buffer => output(file/screen)
+
+In [55]: g.flush?
+Type:       builtin_function_or_method
+String Form:<built-in method flush of file object at 0x7f9532d96d20>
+Docstring:  flush() -> None.  Flush the internal I/O buffer.
+
+In [56]: g.flush()
+
+In [57]: g.writelines?
+Type:       builtin_function_or_method
+String Form:<built-in method writelines of file object at 0x7f9532d96d20>
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+
+In [58]: L_lines
+Out[58]: 
+['This is line  1.\n',
+ 'This is line  2.\n',
+ 'This is line  3.\n',
+ 'This is line  4.\n',
+ 'This is line  5.\n',
+ 'this is line 6.\n']
+
+In [59]: g.writelines(L_lines)
+
+In [60]: g.flush()
+
+In [61]: g
+Out[61]: <open file 'mynew_file.txt', mode 'w' at 0x7f9532d96d20>
+
+In [62]: g.close()
+
+In [63]: g
+Out[63]: <closed file 'mynew_file.txt', mode 'w' at 0x7f9532d96d20>
+
+In [64]: g.read()
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-64-8a12481fdb4d> in <module>()
+----> 1 g.read()
+
+ValueError: I/O operation on closed file
+
+In [75]: h
+Out[75]: <open file 'testing.txt', mode 'a' at 0x7f9532d96c90>
+
+In [76]: h.tell()
+Out[76]: 14
+
+In [77]: h.seek(0)
+
+In [78]: h.tell()
+Out[78]: 0
+
+In [79]: h.trunacate()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-79-afe132af2b55> in <module>()
+----> 1 h.trunacate()
+
+AttributeError: 'file' object has no attribute 'trunacate'
+
+In [80]: h.truncate()
+
+In [81]: h.readinto?
+Type:       builtin_function_or_method
+String Form:<built-in method readinto of file object at 0x7f9532d96c90>
+Docstring:  readinto() -> Undocumented.  Don't use this; it may go away.
+
+In [82]: f
+Out[82]: <open file 'file1.txt', mode 'r' at 0x7f9532d96ae0>
+
+In [83]: f.tell()
+Out[83]: 85
+
+In [84]: f.seek(0)
+
+In [85]: f.next()
+Out[85]: 'This is line  1.\n'
+
+In [86]: f.next()()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-86-b8f036a64872> in <module>()
+----> 1 f.next()()
+
+TypeError: 'str' object is not callable
+
+In [87]: f.next()
+Out[87]: 'This is line  3.\n'
+
+In [88]: f.next()
+Out[88]: 'This is line  4.\n'
+
+In [89]: f.next()
+Out[89]: 'This is line  5.\n'
+
+In [90]: f.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-90-c3e65e5362fb> in <module>()
+----> 1 f.next()
+
+StopIteration: 
+
+In [92]: f.
+f.close       f.encoding    f.fileno      f.isatty      f.name        f.next        f.readinto    f.readlines   f.softspace   f.truncate    f.writelines
+f.closed      f.errors      f.flush       f.mode        f.newlines    f.read        f.readline    f.seek        f.tell        f.write       f.xreadlines
+
+In [92]: f.newlines?
+Type:       NoneType
+String Form:None
+Docstring:  <no docstring>
+
+In [93]: f.isatty
+Out[93]: <function isatty>
+
+In [94]: f.isatty?
+Type:       builtin_function_or_method
+String Form:<built-in method isatty of file object at 0x7f9532d96ae0>
+Docstring:  isatty() -> true or false.  True if the file is connected to a tty device.
+
+In [95]: f
+Out[95]: <open file 'file1.txt', mode 'r' at 0x7f9532d96ae0>
+
+In [96]: f.isatty()
+Out[96]: False
+
+In [97]: i = open('/dev/pts/2')
+
+In [98]: i.isatty()
+Out[98]: True
+
+In [99]: # f.encoding,f.error,f.fileno
+
+In [100]: 
+
+In [101]: f
+Out[101]: <open file 'file1.txt', mode 'r' at 0x7f9532d96ae0>
+
+In [102]: f.close()
+
+In [103]: f
+Out[103]: <closed file 'file1.txt', mode 'r' at 0x7f9532d96ae0>
+
+In [104]: f.read()
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-104-bacd0e0f09a3> in <module>()
+----> 1 f.read()
+
+ValueError: I/O operation on closed file
+
+In [105]: f.closed
+Out[105]: True
+
+In [106]: if f.closed:
+   .....:     print "your file is closed"
+   .....: else:
+   .....:     print "your files is open"
+   .....:     
+your file is closed
+
+In [107]: try:
+   .....:     f.read()
+   .....: except ValueError:
+   .....:     print "your file is in closed mode"
+   .....: else:
+   .....:     f.read()
+   .....: finally:
+   .....:     f.close()
+   .....:     
+your file is in closed mode
+
+In [108]: f
+Out[108]: <closed file 'file1.txt', mode 'r' at 0x7f9532d96ae0>
+
+In [109]: # with
+
+In [110]: with open('file1.txt','a') as f:
+   .....:     f.write("hey i appended a new line.\n")
+   .....:     f.flush()
+   .....:     
+
+In [111]: f
+Out[111]: <closed file 'file1.txt', mode 'a' at 0x7f9532d96ed0>
+
+--- working withe xcel
+
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/files $ virtualenv sheets
+New python executable in sheets/bin/python
+Installing setuptools, pip...done.
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/files $ source sheets/bin/activate
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/files $ 
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/files $ pip freeze
+argparse==1.2.1
+wsgiref==0.1.2
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/files $ pip install excel
+Downloading/unpacking excel
+  Downloading excel-1.0.0.tar.gz
+  Running setup.py (path:/home/tuxfux-hlp/Desktop/batch-46/files/sheets/build/excel/setup.py) egg_info for package excel
+    
+Downloading/unpacking xlrd (from excel)
+  Downloading xlrd-0.9.4.tar.gz (322kB): 322kB downloaded
+  Running setup.py (path:/home/tuxfux-hlp/Desktop/batch-46/files/sheets/build/xlrd/setup.py) egg_info for package xlrd
+    
+Installing collected packages: excel, xlrd
+  Running setup.py install for excel
+    
+  Running setup.py install for xlrd
+    changing mode of build/scripts-2.7/runxlrd.py from 644 to 755
+    
+    changing mode of /home/tuxfux-hlp/Desktop/batch-46/files/sheets/bin/runxlrd.py to 755
+Successfully installed excel xlrd
+Cleaning up...
+
+
+# dealing with xml files
+http://www.tutorialspoint.com/python/python_xml_processing.htm
+
+
+
+

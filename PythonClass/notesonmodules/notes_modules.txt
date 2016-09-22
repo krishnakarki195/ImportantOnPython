@@ -1,0 +1,739 @@
+In [1]: # modules
+
+In [2]: help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+/usr/lib/python2.7/dist-packages/gobject/constants.py:24: Warning: g_boxed_type_register_static: assertion 'g_type_from_name (name) == 0' failed
+  import gobject._gobject
+No handlers could be found for logger "oneconf.distributor"
+ANSI                _warnings           gnomekeyring        readline
+AptUrl              _weakref            gnomevfs            reportlab
+BaseHTTPServer      _weakrefset         gobject             repr
+Bastion             abc                 google              requests
+BeautifulSoup       aifc                grp                 resource
+BeautifulSoupTests  antigravity         gtk                 rexec
+CDROM               anydbm              gtksourceview2      rfc822
+CGIHTTPServer       apt                 gtkunixprint        rlcompleter
+Canvas              apt_inst            gzip                rmagic
+CommandNotFound     apt_pkg             hashlib             robotparser
+ConfigParser        aptdaemon           heapq               runpy
+Cookie              aptsources          hmac                samba
+Crypto              argparse            hotshot             sched
+DLFCN               array               htmlentitydefs      screen
+Dialog              ast                 htmllib             select
+DocXMLRPCServer     asynchat            httplib             serial
+FSM                 asyncore            httplib2            sessioninstaller
+FileDialog          atexit              ihooks              sets
+FixTk               atk                 imaplib             sexy
+HTMLParser          audiodev            imghdr              sgmllib
+IN                  audioop             imp                 sha
+IPython             autoreload          importlib           shelve
+Image               axi                 imputil             shlex
+ImageChops          base64              inspect             shutil
+ImageColor          bdb                 io                  signal
+ImageCrackCode      binascii            itertools           simplegeneric
+ImageDraw           binhex              json                sip
+ImageEnhance        bisect              keyword             sipconfig
+ImageFile           bonobo              ldb                 sipconfig_nd
+ImageFileIO         bpdb                lib2to3             site
+ImageFilter         bpython             libxml2             sitecustomize
+ImageFont           bsddb               libxml2mod          six
+ImageGL             bz2                 linecache           smbc
+ImageGrab           cPickle             linuxaudiodev       smtpd
+ImageMath           cProfile            locale              smtplib
+ImageOps            cStringIO           lockfile            sndhdr
+ImagePalette        cairo               logging             socket
+ImagePath           calendar            lsb_release         spwd
+ImageQt             caribou             lxml                sqlite3
+ImageSequence       cgi                 macpath             sre
+ImageStat           cgitb               macurl2path         sre_compile
+ImageTk             chardet             mailbox             sre_constants
+ImageWin            chunk               mailcap             sre_parse
+MimeWriter          cmath               mako                ssl
+MySQLdb             cmd                 markupbase          stat
+ORBit               code                markupsafe          statvfs
+OpenSSL             codecs              marshal             storemagic
+PAM                 codeop              math                string
+PIL                 collections         md5                 stringold
+PSDraw              colorsys            mhlib               stringprep
+PngImagePlugin      commands            mimetools           strop
+PyQt4               compileall          mimetypes           struct
+Queue               compiler            mimify              subprocess
+ScrolledText        configglue          miniterm            sunau
+SimpleDialog        configobj           mmap                sunaudio
+SimpleHTTPServer    contextlib          modulefinder        symbol
+SimpleXMLRPCServer  cookielib           multifile           sympyprinting
+SocketServer        copy                multiprocessing     symtable
+StringIO            copy_reg            mutex               sys
+TYPES               crypt               netrc               sysconfig
+Tix                 csv                 new                 syslog
+Tkconstants         ctypes              nis                 tabnanny
+Tkdnd               cups                nntplib             talloc
+Tkinter             cupshelpers         ntdb                tarfile
+UbuntuSystemService curl                ntpath              tdb
+UserDict            curses              nturl2path          telnetlib
+UserList            cv                  numbers             tempfile
+UserString          cv2                 numpy               termios
+_LWPCookieJar       cythonmagic         oauthlib            test
+_MozillaCookieJar   datetime            octavemagic         textwrap
+__builtin__         dbhash              oneconf             this
+__future__          dbm                 opcode              thread
+_abcoll             dbus                operator            threading
+_ast                deb822              optparse            tidy
+_bisect             debconf             os                  time
+_bsddb              debian              os2emxpath          timeit
+_codecs             debian_bundle       ossaudiodev         tkColorChooser
+_codecs_cn          debtagshw           pango               tkCommonDialog
+_codecs_hk          decimal             pangocairo          tkFileDialog
+_codecs_iso2022     decorator           parallelmagic       tkFont
+_codecs_jp          defer               paramiko            tkMessageBox
+_codecs_kr          difflib             parser              tkSimpleDialog
+_codecs_tw          dircache            parted              toaiff
+_collections        dirspec             pdb                 token
+_csv                dis                 pexpect             tokenize
+_ctypes             distutils           pickle              trace
+_ctypes_test        dns                 pickletools         traceback
+_curses             doctest             pilconvert          ttk
+_curses_panel       drv_libxml2         pildriver           tty
+_dbus_bindings      dsextras            pilfile             turtle
+_dbus_glib_bindings dumbdbm             pilfont             twisted
+_elementtree        dummy_thread        pilprint            types
+_functools          dummy_threading     pipes               ubuntu_sso
+_hashlib            duplicity           piston_mini_client  unicodedata
+_heapq              email               pkg_resources       unittest
+_hotshot            encodings           pkgutil             urllib
+_io                 errno               platform            urllib2
+_json               exceptions          plistlib            urllib3
+_locale             fcntl               popen2              urlparse
+_lsprof             fdpexpect           poplib              user
+_md5                feedparser          posix               uu
+_multibytecodec     filecmp             posixfile           uuid
+_multiprocessing    fileinput           posixpath           validate
+_mysql              fnmatch             pprint              vte
+_mysql_exceptions   formatter           profile             warnings
+_osx_support        fpectl              pstats              wave
+_ped                fpformat            pty                 weakref
+_pyio               fractions           pwd                 webbrowser
+_random             ftplib              pxssh               webkit
+_sha                functools           py_compile          whichdb
+_sha256             future_builtins     pyatspi             wsgiref
+_sha512             gc                  pyclbr              xapian
+_smbc               gconf               pycurl              xdg
+_socket             gdbm                pydoc               xdrlib
+_sqlite3            genericpath         pydoc_data          xml
+_sre                getopt              pyexpat             xmllib
+_ssl                getpass             pygments            xmlrpclib
+_strptime           gettext             pygtk               xxsubtype
+_struct             gi                  pygtkcompat         zipfile
+_symtable           gio                 pyinotify           zipimport
+_sysconfigdata      glib                pynotify            zlib
+_sysconfigdata_nd   glob                quopri              zope
+_testcapi           gnome               random              
+_threading_local    gnomecanvas         re                  
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose descriptions contain the word "spam".
+
+help> 
+
+
+In [4]: import abc
+
+In [5]: import xyz
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-5-ee019ec63415> in <module>()
+----> 1 import xyz
+
+ImportError: No module named xyz
+
+In [6]: import math
+
+In [7]: math.
+math.acos       math.atan2      math.cosh       math.exp        math.fmod       math.isinf      math.log10      math.radians    math.tanh       
+math.acosh      math.atanh      math.degrees    math.expm1      math.frexp      math.isnan      math.log1p      math.sin        math.trunc      
+math.asin       math.ceil       math.e          math.fabs       math.fsum       math.ldexp      math.modf       math.sinh       
+math.asinh      math.copysign   math.erf        math.factorial  math.gamma      math.lgamma     math.pi         math.sqrt       
+math.atan       math.cos        math.erfc       math.floor      math.hypot      math.log        math.pow        math.tan        
+
+In [7]: math.pi
+Out[7]: 3.141592653589793
+
+In [8]: math.pow
+Out[8]: <function math.pow>
+
+In [9]: math.pow?
+Type:       builtin_function_or_method
+String Form:<built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [10]: math.pow(4,2)
+Out[10]: 16.0
+
+
+In [12]: import math as m
+
+In [13]: m.
+m.acos       m.atan       m.copysign   m.e          m.expm1      m.fmod       m.hypot      m.lgamma     m.modf       m.sin        m.tanh       
+m.acosh      m.atan2      m.cos        m.erf        m.fabs       m.frexp      m.isinf      m.log        m.pi         m.sinh       m.trunc      
+m.asin       m.atanh      m.cosh       m.erfc       m.factorial  m.fsum       m.isnan      m.log10      m.pow        m.sqrt       
+m.asinh      m.ceil       m.degrees    m.exp        m.floor      m.gamma      m.ldexp      m.log1p      m.radians    m.tan        
+
+In [13]: m.pi
+Out[13]: 3.141592653589793
+
+In [14]: m.pow
+Out[14]: <function math.pow>
+
+In [15]: m.pow?
+Type:       builtin_function_or_method
+String Form:<built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [17]: from math import pi,pow
+
+In [18]: # adding pi and pow to my local namespace
+
+In [19]: pi
+Out[19]: 3.141592653589793
+
+In [20]: pow?
+Type:       builtin_function_or_method
+String Form:<built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [21]: pow(2,3)
+Out[21]: 8.0
+
+In [22]: # from math import *
+
+In [23]: # Please dont try this anywhere
+
+In [24]: 
+
+In [27]: pwd
+Out[27]: u'/home/tuxfux-hlp/Desktop/batch-46/modules'
+
+In [28]: ls
+first.py  notes_modules.txt
+
+In [29]: import first as f
+
+In [30]: f.
+f.my_add   f.my_sub   f.version  
+
+In [30]: f.version
+Out[30]: 2.0
+
+In [31]: f.my_add?
+Type:       function
+String Form:<function my_add at 0x7f56cd64a938>
+File:       /home/tuxfux-hlp/Desktop/batch-46/modules/first.py
+Definition: f.my_add(a, b)
+Docstring:  The my_add function is for addition. 
+
+In [32]: f.my_sub?
+Type:       function
+String Form:<function my_sub at 0x7f56cd64aa28>
+File:       /home/tuxfux-hlp/Desktop/batch-46/modules/first.py
+Definition: f.my_sub(a, b)
+Docstring:  This is going to substract the largest from smaller number
+
+
+In [27]: pwd
+Out[27]: u'/home/tuxfux-hlp/Desktop/batch-46/modules'
+
+In [28]: ls
+first.py  notes_modules.txt
+
+In [29]: import first as f
+
+In [30]: f.
+f.my_add   f.my_sub   f.version  
+
+In [30]: f.version
+Out[30]: 2.0
+
+In [31]: f.my_add?
+Type:       function
+String Form:<function my_add at 0x7f56cd64a938>
+File:       /home/tuxfux-hlp/Desktop/batch-46/modules/first.py
+Definition: f.my_add(a, b)
+Docstring:  The my_add function is for addition. 
+
+In [32]: f.my_sub?
+Type:       function
+String Form:<function my_sub at 0x7f56cd64aa28>
+File:       /home/tuxfux-hlp/Desktop/batch-46/modules/first.py
+Definition: f.my_sub(a, b)
+Docstring:  This is going to substract the largest from smaller number
+
+In [33]: math.pow?
+Type:       builtin_function_or_method
+String Form:<built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [34]: f.my_add(10,20)
+Out[34]: 30
+
+In [35]: f.my_sub(40,20)
+Out[35]: 20
+
+In [36]: f.version
+Out[36]: 2.0
+
+In [37]: import first a f
+  File "<ipython-input-37-4c2fc6c63685>", line 1
+    import first a f
+                 ^
+SyntaxError: invalid syntax
+
+
+In [38]: import first as f
+
+In [39]: f.version
+Out[39]: 2.0
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ls
+first.py  first.pyc  notes_modules.txt
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ cat first.py
+#!/usr/bin/python
+
+version = 3.0
+
+def my_add(a,b):
+  ''' 
+  The my_add function is for addition. 
+  '''
+  return a + b
+  
+def my_sub(a,b):
+  ''' This is going to substract the largest from smaller number'''
+  if a > b:
+    return a - b
+  else:
+    return b - a
+    
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ cat first.pyc
+
+'�?Wc@sdZd�Zd�ZdS(g@cC||S(s, 
+  The my_add function is for addition. 
+  ((tatb((first.pytmy_addscCs ||kr||S||SdS(s; This is going to substract the largest from smaller numberN((RR((first.pytmy_sub
+                                                                                                                                                   s
+                                                                                                                                                      N(tversionRR(((first.py<module>s	tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ file first.pyc
+first.pyc: python 2.7 byte-compiled
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ file first.py
+first.py: Python script, ASCII text executable
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ 
+s
+
+In [38]: import first as f
+
+In [39]: f.version
+Out[39]: 2.0
+
+In [40]: reload(f)
+Out[40]: <module 'first' from 'first.py'>
+
+In [41]: f.version
+Out[41]: 3.0
+
+-- second.py ----
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ python second.py 
+addition of two numbers is <function my_add at 0x7f840e3a5758> 
+addition of two strings is today rocks
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ python second.py 
+addition of two numbers is 30 
+addition of two strings is today rocks
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ls
+first.py  first.pyc  notes_modules.txt  second.py
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ mkdir extra
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ls
+extra  first.py  first.pyc  notes_modules.txt  second.py
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ mv first.py extra/
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ls
+extra  first.pyc  notes_modules.txt  second.py
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ rm -f first.pyc
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ls
+extra  notes_modules.txt  second.py
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ python second.py 
+Traceback (most recent call last):
+  File "second.py", line 2, in <module>
+    import first as f
+ImportError: No module named first
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree extra
+The program 'tree' is currently not installed. You can install it by typing:
+sudo apt-get install tree
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ sudo apt-get install tree
+[sudo] password for tuxfux-hlp: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  tree
+0 upgraded, 1 newly installed, 0 to remove and 307 not upgraded.
+Need to get 37.8 kB of archives.
+After this operation, 109 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty/universe tree amd64 1.6.0-1 [37.8 kB]
+Fetched 37.8 kB in 1s (21.1 kB/s)
+Selecting previously unselected package tree.
+(Reading database ... 165464 files and directories currently installed.)
+Preparing to unpack .../tree_1.6.0-1_amd64.deb ...
+Unpacking tree (1.6.0-1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up tree (1.6.0-1) ...
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree .
+.
+|-- extra
+|   `-- first.py
+|-- notes_modules.txt
+`-- second.py
+
+1 directory, 3 files
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree .
+.
+|-- extra
+|   `-- first.py
+|-- notes_modules.txt
+`-- second.py
+
+1 directory, 3 files
+
+In [4]: import sys
+
+In [5]: sys.
+sys.api_version            sys.exc_info               sys.getcheckinterval       sys.long_info              sys.prefix                 sys.settrace
+sys.argv                   sys.exc_type               sys.getdefaultencoding     sys.maxint                 sys.ps1                    sys.stderr
+sys.builtin_module_names   sys.excepthook             sys.getdlopenflags         sys.maxsize                sys.ps2                    sys.stdin
+sys.byteorder              sys.exec_prefix            sys.getfilesystemencoding  sys.maxunicode             sys.ps3                    sys.stdout
+sys.call_tracing           sys.executable             sys.getprofile             sys.meta_path              sys.py3kwarning            sys.subversion
+sys.callstats              sys.exit                   sys.getrecursionlimit      sys.modules                sys.pydebug                sys.version
+sys.copyright              sys.exitfunc               sys.getrefcount            sys.path                   sys.setcheckinterval       sys.version_info
+sys.displayhook            sys.flags                  sys.getsizeof              sys.path_hooks             sys.setdlopenflags         sys.warnoptions
+sys.dont_write_bytecode    sys.float_info             sys.gettrace               sys.path_importer_cache    sys.setprofile             
+sys.exc_clear              sys.float_repr_style       sys.hexversion             sys.platform               sys.setrecursionlimit      
+
+In [5]: sys.path
+Out[5]: 
+['',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions']
+
+In [6]: sys.path.insert(0,'/home/tuxfux-hlp/Desktop/batch-46/modules/extra')
+
+In [7]: sys.path
+Out[7]: 
+['/home/tuxfux-hlp/Desktop/batch-46/modules/extra',
+ '',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions']
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ pwd
+/home/tuxfux-hlp/Desktop/batch-46/modules
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ls
+extra  notes_modules.txt  second.py
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ python second.py
+addition of two numbers is 30 
+addition of two strings is today rocks
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ls
+extra  notes_modules.txt  second.py
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ mkdir OS
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ mkdir OS/{lin,sol,aix,hpux}
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ cd OS/lin
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+`-- sol
+
+4 directories, 0 files
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- fourth.py
+|   |-- second.py
+|   `-- third.py
+`-- sol
+
+4 directories, 4 files
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- fourth.py
+|   |-- __init__.py
+|   |-- second.py
+|   `-- third.py
+`-- sol
+
+4 directories, 5 files
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- first.pyc
+|   |-- fourth.py
+|   |-- fourth.pyc
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- second.py
+|   |-- second.pyc
+|   |-- third.py
+|   `-- third.pyc
+`-- sol
+
+4 directories, 10 files
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- first.pyc
+|   |-- fourth.py
+|   |-- fourth.pyc
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- second.py
+|   |-- second.pyc
+|   |-- third.py
+|   `-- third.pyc
+`-- sol
+    |-- first.py
+    |-- fourth.py
+    |-- second.py
+    `-- third.py
+
+4 directories, 14 files
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- first.pyc
+|   |-- fourth.py
+|   |-- fourth.pyc
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- second.py
+|   |-- second.pyc
+|   |-- third.py
+|   `-- third.pyc
+`-- sol
+    |-- first.py
+    |-- fourth.py
+    |-- __init__.py
+    |-- second.py
+    `-- third.py
+
+4 directories, 15 files
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules/OS $ ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 1.2.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-e3ffd921b4a6> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [2]: import lin
+
+In [3]: lin.
+lin.first   lin.fourth  lin.second  lin.third   
+
+In [3]: lin.first.
+lin.first.my_lin1_first   lin.first.my_lin1_fourth  lin.first.my_lin1_second  lin.first.my_lin1_third   
+
+In [3]: lin.first.my_lin1_first()
+Out[3]: 'This is my first lin1 function'
+
+In [4]: lin.first.my_lin1_second()
+Out[4]: 'this is my second lin1 function'
+
+In [5]: lin.first.my_lin1_third()
+Out[5]: 'this is my third lin1 function'
+
+In [6]: lin.first.my_lin1_fourth()
+Out[6]: 'this is my fourth lin1 function'
+
+In [7]: import sol
+
+In [8]: sol.
+sol.first   sol.second  sol.third   
+
+In [8]: sol.first.my_sol1_first()
+Out[8]: 'This is my first sol1 function'
+
+In [9]: from sol import fourth
+
+In [10]: sol.
+sol.first   sol.fourth  sol.second  sol.third   
+
+In [10]: sol.
+
+# installation of modules.
+sudo pip install <modulename>
+sudo easy_install <modulename>
+
+# virtualenv
+
+ sudo apt-get install python-virtualenv
+ tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ virtualenv sheets
+New python executable in sheets/bin/python
+Installing setuptools, pip...done.
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ source sheets/bin/activate
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ 
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ pip freeze
+argparse==1.2.1
+wsgiref==0.1.2
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ pip install excel
+Downloading/unpacking excel
+  Downloading excel-1.0.0.tar.gz
+  Running setup.py (path:/home/tuxfux-hlp/Desktop/batch-46/modules/sheets/build/excel/setup.py) egg_info for package excel
+    
+Downloading/unpacking xlrd (from excel)
+  Downloading xlrd-0.9.4.tar.gz (322kB): 322kB downloaded
+  Running setup.py (path:/home/tuxfux-hlp/Desktop/batch-46/modules/sheets/build/xlrd/setup.py) egg_info for package xlrd
+    
+Installing collected packages: excel, xlrd
+  Running setup.py install for excel
+    
+  Running setup.py install for xlrd
+    changing mode of build/scripts-2.7/runxlrd.py from 644 to 755
+    
+    changing mode of /home/tuxfux-hlp/Desktop/batch-46/modules/sheets/bin/runxlrd.py to 755
+Successfully installed excel xlrd
+Cleaning up...
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ pip freeze
+argparse==1.2.1
+excel==1.0.0
+wsgiref==0.1.2
+xlrd==0.9.4
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ 
+
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ipython
+WARNING: Attempting to work in a virtualenv. If you encounter problems, please install IPython inside the virtualenv.
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 1.2.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import excel
+
+In [2]: quit()
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ 
+(sheets)tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ deactivate 
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ 
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 1.2.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import excel
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-010741c10673> in <module>()
+----> 1 import excel
+
+ImportError: No module named excel
+
+In [2]: 
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ # pydoc
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ ls
+extra  notes_modules.txt  OS  second.py  sheets
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules $ cd extra/
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules/extra $ ls
+first.py  first.pyc
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules/extra $ pydoc first
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/modules/extra $ pydoc sys
+
+
+
+
+References:
+https://docs.python.org/2/tutorial/modules.html#packages

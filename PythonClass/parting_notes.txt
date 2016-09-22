@@ -1,0 +1,54 @@
+Parting Notes
+---------------
+
+Recommended books/sites
+--------------------------
+
+-- books -- 
+1) Learn python the hardway
+2) Byte of python
+3) Dive into python
+4) Think Python
+5) Core python programming language
+6) High performance python
+7) Python standard libary reference ( http://it-ebooks.info)
+
+
+-- sites -- 
+# videos
+1) youtube.com - pycon
+2) http://pyvideo.org/
+3) http://hasgeek.tv
+
+# Learning/writing code
+1) http://codeacademy.com
+2) https://www.coursera.org/
+3) https://projecteuler.net/
+4) http://www.pythonchallenge.com/
+5) http://codechef.com
+6) http://ocw.mit.edu
+7) https://it-ebooks.info
+8) https://codility.com/
+
+# Daily sites to visit
+
+1) http://readwrite.com
+2) http://opensourceforu.efytimes.com/
+3) http://www.programmableweb.com/ 
+4) http://highscalability.com
+5) http://thenextweb.com/
+6) http://github.com
+
+Look around sites
+-------------------
+1) jobs.hasgeek.com
+2) fiverr.com
+3) https://www.freelancer.in/jobs/Python/1/
+
+Lets keep in touch :
+----------------------
+
+email : tuxfux.hlp@gmail.com
+groups: lamp_tutorial@googlegroup.com
+
+

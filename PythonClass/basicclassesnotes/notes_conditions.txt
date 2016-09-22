@@ -1,0 +1,33 @@
+In [1]: # conditional control
+
+In [2]: 5 > 2
+Out[2]: True
+
+In [3]: 2 > 5
+Out[3]: False
+
+In [4]: type(True)
+Out[4]: bool
+
+In [5]: type(False)
+Out[5]: bool
+
+In [6]: ''' if you condition is true:
+   ...: go into the loop
+   ...: else:
+   ...:    do the other thing
+   ...: '''
+Out[6]: ' if you condition is true:\ngo into the loop\nelse:\n   do the other thing\n'
+
+In [7]: if 5 > 2:
+   ...:     print "5 is greater than 2"
+   ...:     
+5 is greater than 2
+
+In [8]: if 2 > 5:
+   ...:     print "2 is greater than 5"
+   ...: else:
+   ...:     print "5 is greater than 2"
+   ...:     
+5 is greater than 2
+

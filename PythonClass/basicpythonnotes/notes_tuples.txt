@@ -1,0 +1,252 @@
+In [16]: # tuples
+
+In [17]: # readonly representation of list
+
+In [18]: # weeks of day, gender, t-shirt sizes
+
+In [19]: weeks = ('mon','tue','wed','thu','fri','sat','sun')
+
+In [20]: type(weeks)
+Out[20]: tuple
+
+In [21]: weeks[0]
+Out[21]: 'mon'
+
+In [22]: # indexing and slicing are both available for tuples
+
+In [23]: empty_tuples = ()
+
+In [24]: type(empty_tuples)
+Out[24]: tuple
+
+In [25]: empty_tuples = tuple()
+
+In [26]: type(empty_tuples)
+Out[26]: tuple
+
+In [27]: # List : ['apple','banana'],[],list()
+
+In [28]: # tuples: ('apple','banana'),(),tuple()
+
+In [29]: 
+
+In [30]: weeks
+Out[30]: ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+
+In [31]: weeks[0]
+Out[31]: 'mon'
+
+In [32]: weeks[0]='monday'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-32-5124e52e919e> in <module>()
+----> 1 weeks[0]='monday'
+
+TypeError: 'tuple' object does not support item assignment
+
+In [33]: tuple -> list,string
+  File "<ipython-input-33-dc27eb4e44f5>", line 1
+    tuple -> list,string
+           ^
+SyntaxError: invalid syntax
+
+
+In [34]: # tuple -> list,string
+
+In [35]: my_string='python'
+
+In [36]: type(my_string)
+Out[36]: str
+
+In [37]: my_string=('python')
+
+In [38]: type(my_string)
+Out[38]: str
+
+In [39]: my_string=('python',)
+
+In [40]: type(my_string)
+Out[40]: tuple
+
+In [41]: print my_string
+('python',)
+
+In [42]: my_string = 'yugul','prithvi','kamal'
+
+In [43]: type(my_string)
+Out[43]: tuple
+
+In [44]: print my_string
+('yugul', 'prithvi', 'kamal')
+
+In [46]: # pacaking and unpacking
+
+In [47]: weeks
+Out[47]: ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+
+In [48]: # tuples or a list ( package)
+
+In [49]: day1 = weeks[0]
+
+In [50]: day1
+Out[50]: 'mon'
+
+In [51]: day1,day2,day3,day4,day5,day6,day7 = weeks
+
+In [52]: day1
+Out[52]: 'mon'
+
+In [53]: day2
+Out[53]: 'tue'
+
+In [54]: day3
+Out[54]: 'wed'
+
+In [55]: day4
+Out[55]: 'thu'
+
+In [56]: day1,day2,day3,day4,day5,day6 = weeks
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-56-f4efe27fe49d> in <module>()
+----> 1 day1,day2,day3,day4,day5,day6 = weeks
+
+ValueError: too many values to unpack
+
+In [57]: day1,day2,day3,day4,day5,day6,day7,day8 = weeks
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-57-e8763144acaa> in <module>()
+----> 1 day1,day2,day3,day4,day5,day6,day7,day8 = weeks
+
+ValueError: need more than 7 values to unpack
+
+In [59]: # lists weds tuples
+
+In [60]: students = ['krishna','yugul','prithivi','parmesh','hari','bisoo']
+
+In [61]: exams    = ['python','perl','openstack','ec2','devops','django']
+
+In [62]: # 1
+
+In [63]: 'krishna' in students
+Out[63]: True
+
+In [64]: # 2 
+
+In [65]: students.index('krishna')
+Out[65]: 0
+
+In [66]: # 3 
+
+In [67]: exams[students.index('krishna')]
+Out[67]: 'python'
+
+In [68]: name='krishna'
+
+In [69]: if name in students:
+   ....:     print "{} is going to give exam {}".format(name,exams[students.index(name)])
+   ....:     
+krishna is going to give exam python
+
+In [70]: name='parmesh'
+
+In [71]: if name in students:
+    print "{} is going to give exam {}".format(name,exams[students.index(name)])
+   ....:     
+parmesh is going to give exam ec2
+
+In [72]: name='bisoo'
+
+In [73]: if name in students:
+    print "{} is going to give exam {}".format(name,exams[students.index(name)])
+   ....:     
+bisoo is going to give exam django
+
+In [74]: exams.sort()
+
+In [75]: students
+Out[75]: ['krishna', 'yugul', 'prithivi', 'parmesh', 'hari', 'bisoo']
+
+In [76]: exams
+Out[76]: ['devops', 'django', 'ec2', 'openstack', 'perl', 'python']
+
+In [77]: name='krishna'
+
+In [78]: if name in students:
+    print "{} is going to give exam {}".format(name,exams[students.index(name)])
+   ....:     
+krishna is going to give exam devops
+
+In [79]: name='parmesh'
+
+In [80]: if name in students:
+    print "{} is going to give exam {}".format(name,exams[students.index(name)])
+   ....:     
+parmesh is going to give exam openstack
+
+In [81]: name='bisoo'
+
+In [82]: if name in students:
+    print "{} is going to give exam {}".format(name,exams[students.index(name)])
+   ....:     
+bisoo is going to give exam python
+
+In [84]: students = ['krishna','yugul','prithivi','parmesh','hari','bisoo']
+
+In [85]: exams    = ['python','perl','openstack','ec2','devops','django']
+
+In [86]: semister = [(),(),(),(),(),()]
+
+In [87]: semister = [('krishna','python'),('yugul','perl'),('prithvi','openstack'),('parmesh','ec2'),('hari','devops'),('bisoo','django')]
+
+In [88]: print semister
+[('krishna', 'python'), ('yugul', 'perl'), ('prithvi', 'openstack'), ('parmesh', 'ec2'), ('hari', 'devops'), ('bisoo', 'django')]
+
+In [89]: semister.sort()
+
+In [90]: semister
+Out[90]: 
+[('bisoo', 'django'),
+ ('hari', 'devops'),
+ ('krishna', 'python'),
+ ('parmesh', 'ec2'),
+ ('prithvi', 'openstack'),
+ ('yugul', 'perl')]
+
+In [91]: # groupby - feature in databases
+
+In [92]: for student in semister:
+   ....:     print student
+   ....:     
+('bisoo', 'django')
+('hari', 'devops')
+('krishna', 'python')
+('parmesh', 'ec2')
+('prithvi', 'openstack')
+('yugul', 'perl')
+
+In [93]: for student,subject in semister:
+    print student,subject
+   ....:     
+bisoo django
+hari devops
+krishna python
+parmesh ec2
+prithvi openstack
+yugul perl
+
+In [94]: name='hari'
+
+In [95]: for student,subject in semister:
+   ....:     if name == 'student':
+   ....:         print "{} is going to give the exam {}".format(name,subject)
+   ....:         
+
+In [96]: for student,subject in semister:
+    if name == student:
+        print "{} is going to give the exam {}".format(name,subject)
+   ....:         
+hari is going to give the exam devops
+
+

@@ -1,0 +1,523 @@
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~ $ ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 1.2.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: # lists
+
+In [2]: # list is a linear collection of data
+
+In [3]: fruits = ['apple','banana','cherry','dates']
+
+In [4]: type(fruits)
+Out[4]: list
+
+In [5]: empty_list = []
+
+In [6]: print empty_list
+[]
+
+In [7]: type(empty_list)
+Out[7]: list
+
+In [8]: empty_list = list()
+
+In [9]: print empty_list
+[]
+
+In [10]: # array vs list
+
+In [11]: # array : mulitdimensinal representation of data . Matrix.
+
+In [12]: # list : is a linear collection of data.
+
+In [14]: fruits = ['apple','banana','cherry','dates']
+
+In [15]: fruits[0]
+Out[15]: 'apple'
+
+In [16]: fruits[1]
+Out[16]: 'banana'
+
+In [17]: fruits[2]
+Out[17]: 'cherry'
+
+In [18]: fruits[3]
+Out[18]: 'dates'
+
+In [19]: fruits[0] = 'Apple'
+
+In [20]: fruits
+Out[20]: ['Apple', 'banana', 'cherry', 'dates']
+
+In [21]: my_string='python'
+
+In [22]: my_string[0]
+Out[22]: 'p'
+
+In [23]: my_string[0] = 'P'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-23-1feddb4205ea> in <module>()
+----> 1 my_string[0] = 'P'
+
+TypeError: 'str' object does not support item assignment
+
+In [24]: # lists are mutable where as string are immutable
+
+In [26]: # lists - indexing and slicing
+
+In [27]: fruits
+Out[27]: ['Apple', 'banana', 'cherry', 'dates']
+
+In [28]: # indexing
+
+In [29]: fruits[0]
+Out[29]: 'Apple'
+
+In [30]: fruits[1]
+Out[30]: 'banana'
+
+In [31]: fruits[2]
+Out[31]: 'cherry'
+
+In [32]: # slicing
+
+In [33]: fruits[0:2]
+Out[33]: ['Apple', 'banana']
+
+In [34]: fruits[2:]
+Out[34]: ['cherry', 'dates']
+
+In [35]: fruits[2:4]
+Out[35]: ['cherry', 'dates']
+
+In [36]: # in operation
+
+In [37]: 'Apple' in fruits
+Out[37]: True
+
+In [38]: 'banana' in fruits
+Out[38]: True
+
+In [39]: 'carrot' in fruits
+Out[39]: False
+
+In [40]: # medical store or a general store
+
+In [41]: # 'paracetomol' in medicines
+
+In [43]: # iteration
+
+In [44]: for value in fruits:
+   ....:     print value
+   ....:     
+Apple
+banana
+cherry
+dates
+
+In [46]: # list to string and string to list conversion
+
+In [47]: my_string='python'
+
+In [48]: my_sting[0] = 'P'
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-48-9696f0d62be1> in <module>()
+----> 1 my_sting[0] = 'P'
+
+NameError: name 'my_sting' is not defined
+
+In [49]: my_string[0] = 'P'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-49-1feddb4205ea> in <module>()
+----> 1 my_string[0] = 'P'
+
+TypeError: 'str' object does not support item assignment
+
+In [50]: Lmy_string=list(my_string)
+
+In [51]: Lmy_string
+Out[51]: ['p', 'y', 't', 'h', 'o', 'n']
+
+In [52]: Lmy_string[0]
+Out[52]: 'p'
+
+In [53]: Lmy_string[0]='P'
+
+In [54]: print Lmy_string
+['P', 'y', 't', 'h', 'o', 'n']
+
+In [55]: limiter=''
+
+In [56]: limiter.
+limiter.capitalize  limiter.endswith    limiter.isalnum     limiter.istitle     limiter.lstrip      limiter.rjust       limiter.splitlines  limiter.translate
+limiter.center      limiter.expandtabs  limiter.isalpha     limiter.isupper     limiter.partition   limiter.rpartition  limiter.startswith  limiter.upper
+limiter.count       limiter.find        limiter.isdigit     limiter.join        limiter.replace     limiter.rsplit      limiter.strip       limiter.zfill
+limiter.decode      limiter.format      limiter.islower     limiter.ljust       limiter.rfind       limiter.rstrip      limiter.swapcase    
+limiter.encode      limiter.index       limiter.isspace     limiter.lower       limiter.rindex      limiter.split       limiter.title       
+
+In [56]: limiter.join?
+Type:       builtin_function_or_method
+String Form:<built-in method join of str object at 0x7ff514d1c508>
+Docstring:
+S.join(iterable) -> string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+
+In [57]: limiter.join(Lmy_string)
+Out[57]: 'Python'
+
+In [58]: limiter=':'
+
+In [59]: limiter.join(Lmy_string)
+Out[59]: 'P:y:t:h:o:n'
+
+In [60]: limiter=''
+
+In [61]: limiter.join(Lmy_string)
+Out[61]: 'Python'
+
+In [63]: my_sentence="today is sunday."
+
+In [64]: # cannot use a list() function as it will break it to characters
+
+In [65]: my_sentence.
+my_sentence.capitalize  my_sentence.find        my_sentence.isspace     my_sentence.partition   my_sentence.rstrip      my_sentence.translate
+my_sentence.center      my_sentence.format      my_sentence.istitle     my_sentence.replace     my_sentence.split       my_sentence.upper
+my_sentence.count       my_sentence.index       my_sentence.isupper     my_sentence.rfind       my_sentence.splitlines  my_sentence.zfill
+my_sentence.decode      my_sentence.isalnum     my_sentence.join        my_sentence.rindex      my_sentence.startswith  
+my_sentence.encode      my_sentence.isalpha     my_sentence.ljust       my_sentence.rjust       my_sentence.strip       
+my_sentence.endswith    my_sentence.isdigit     my_sentence.lower       my_sentence.rpartition  my_sentence.swapcase    
+my_sentence.expandtabs  my_sentence.islower     my_sentence.lstrip      my_sentence.rsplit      my_sentence.title       
+
+In [65]: my_sentence.split?
+Type:       builtin_function_or_method
+String Form:<built-in method split of str object at 0x7ff51074e998>
+Docstring:
+S.split([sep [,maxsplit]]) -> list of strings
+
+Return a list of the words in the string S, using sep as the
+delimiter string.  If maxsplit is given, at most maxsplit
+splits are done. If sep is not specified or is None, any
+whitespace string is a separator and empty strings are removed
+from the result.
+
+In [66]: my_sentence.split()
+Out[66]: ['today', 'is', 'sunday.']
+
+In [67]: Lmy_sentence=my_sentence.split()
+
+In [68]: Lmy_sentence
+Out[68]: ['today', 'is', 'sunday.']
+
+In [69]: Lmy_sentence[0]
+Out[69]: 'today'
+
+In [70]: Lmy_sentence[0]='Tomorrow'
+
+In [71]: Lmy_sentence
+Out[71]: ['Tomorrow', 'is', 'sunday.']
+
+In [72]: delimiter=' '
+
+In [73]: delimiter.join?
+Type:       builtin_function_or_method
+String Form:<built-in method join of str object at 0x7ff514d1ce68>
+Docstring:
+S.join(iterable) -> string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+
+In [74]: delimiter.join(Lmy_sentence)
+Out[74]: 'Tomorrow is sunday.'
+
+In [76]: # Memory allocations
+
+In [77]: # aliasing
+
+In [78]: my_num = 1
+
+In [79]: id?
+Type:       builtin_function_or_method
+String Form:<built-in function id>
+Namespace:  Python builtin
+Docstring:
+id(object) -> integer
+
+Return the identity of an object.  This is guaranteed to be unique among
+simultaneously existing objects.  (Hint: it's the object's memory address.)
+
+In [80]: id(1)
+Out[80]: 19059032
+
+In [81]: my_num1 = 1
+
+In [82]: id(my_num)
+Out[82]: 19059032
+
+In [83]: id(my_num1)
+Out[83]: 19059032
+
+In [84]: my_num1 = 10
+
+In [85]: id(10)
+Out[85]: 19058816
+
+In [86]: id(my_num1)
+Out[86]: 19058816
+
+In [87]: id(my_num)
+Out[87]: 19059032
+
+In [89]: # soft copy
+
+In [90]: L_mynum = [1,2,3]
+
+In [91]: L_mynum[0]
+Out[91]: 1
+
+In [92]: id(L_mynum)
+Out[92]: 140690545096104
+
+In [93]: D_mynum = L_mynum
+
+In [94]: id(D_mynum)
+Out[94]: 140690545096104
+
+In [95]: id(L_mynum)
+Out[95]: 140690545096104
+
+In [96]: D_mynum
+Out[96]: [1, 2, 3]
+
+In [97]: L_mynum
+Out[97]: [1, 2, 3]
+
+In [98]: # is
+
+In [99]: D_mynum is L_mynum
+Out[99]: True
+
+In [100]: L_mynum[1]
+Out[100]: 2
+
+
+In [101]: L_mynum[1]='two'
+
+In [102]: L_mynum
+Out[102]: [1, 'two', 3]
+
+In [103]: D_mynum
+Out[103]: [1, 'two', 3]
+
+In [104]: L_mynum = ['one','two','three']
+
+In [105]: L_mynum
+Out[105]: ['one', 'two', 'three']
+
+In [106]: D_mynum
+Out[106]: [1, 'two', 3]
+
+In [107]: L_mynum is D_mynum
+Out[107]: False
+
+In [109]: # Deep copy
+
+In [110]: L_mynum = [1,2,3]
+
+In [111]: S_mynum = L_mynum
+
+In [112]: # above is a soft copy
+
+In [113]: # memory address are similar
+
+In [114]: S_mynum is L_mynum
+Out[114]: True
+
+In [115]: import copy
+
+In [116]: D_mynum = copy.deepcopy(L_mynum)
+
+In [117]: copy.deepcopy?
+Type:       function
+String Form:<function deepcopy at 0x7ff51395daa0>
+File:       /usr/lib/python2.7/copy.py
+Definition: copy.deepcopy(x, memo=None, _nil=[])
+Docstring:
+Deep copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+
+In [118]: id(D_mynum)
+Out[118]: 140690545098192
+
+In [119]: id(L_mynum)
+Out[119]: 140690518922232
+
+In [120]: D_mynum is L_mynum
+Out[120]: False
+
+In [121]: D_mynum
+Out[121]: [1, 2, 3]
+
+In [122]: L_mynum
+Out[122]: [1, 2, 3]
+
+In [123]: L_mynum[1]='two'
+
+In [124]: L_mynum
+Out[124]: [1, 'two', 3]
+
+In [125]: D_mynum
+Out[125]: [1, 2, 3]
+
+In [126]: L_mynum = [1,2,3]
+
+In [127]: id(L_mynum)
+Out[127]: 140690518924752
+
+In [128]: L_mynum1 = [1,2,3]
+
+In [129]: id(L_mynum1)
+Out[129]: 140690518925256
+
+In [130]: L_mynum is L_mynum1
+Out[130]: False
+
+In [134]: # functions of lists
+
+In [135]: my_fruits
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-135-2c08fff142e0> in <module>()
+----> 1 my_fruits
+
+NameError: name 'my_fruits' is not defined
+
+In [136]: fr
+from       frozenset  fruits     
+
+In [136]: fruits = ['apple','banana','cherry','dates']
+
+In [137]: fruits.
+fruits.append   fruits.count    fruits.extend   fruits.index    fruits.insert   fruits.pop      fruits.remove   fruits.reverse  fruits.sort     
+
+In [137]: fruits.append?
+Type:       builtin_function_or_method
+String Form:<built-in method append of list object at 0x7ff510766bd8>
+Docstring:  L.append(object) -- append object to end
+
+In [138]: fruits.append('gauva')
+
+In [139]: fruits
+Out[139]: ['apple', 'banana', 'cherry', 'dates', 'gauva']
+
+In [140]: fruits.extend?
+Type:       builtin_function_or_method
+String Form:<built-in method extend of list object at 0x7ff510766bd8>
+Docstring:  L.extend(iterable) -- extend list by appending elements from the iterable
+
+In [141]: fruits.extend(['pineapple','grapes','mango'])
+
+In [142]: fruits
+Out[142]: ['apple', 'banana', 'cherry', 'dates', 'gauva', 'pineapple', 'grapes', 'mango']
+
+In [143]: fruits.count('apple')
+Out[143]: 1
+
+In [144]: fruits.count('cherry')
+Out[144]: 1
+
+In [145]: fruits.index?
+Type:       builtin_function_or_method
+String Form:<built-in method index of list object at 0x7ff510766bd8>
+Docstring:
+L.index(value, [start, [stop]]) -> integer -- return first index of value.
+Raises ValueError if the value is not present.
+
+In [146]: fruits.index('mango')
+Out[146]: 7
+
+In [147]: fruits.insert?
+Type:       builtin_function_or_method
+String Form:<built-in method insert of list object at 0x7ff510766bd8>
+Docstring:  L.insert(index, object) -- insert object before index
+
+In [148]: fruits.insert(0,'jackfruit')
+
+In [149]: fruits
+Out[149]: 
+['jackfruit',
+ 'apple',
+ 'banana',
+ 'cherry',
+ 'dates',
+ 'gauva',
+ 'pineapple',
+ 'grapes',
+ 'mango']
+
+In [151]: fruits.
+fruits.append   fruits.count    fruits.extend   fruits.index    fruits.insert   fruits.pop      fruits.remove   fruits.reverse  fruits.sort     
+
+In [151]: fruits.pop?
+Type:       builtin_function_or_method
+String Form:<built-in method pop of list object at 0x7ff510766bd8>
+Docstring:
+L.pop([index]) -> item -- remove and return item at index (default last).
+Raises IndexError if list is empty or index is out of range.
+
+In [152]: fruits
+Out[152]: 
+['jackfruit',
+ 'apple',
+ 'banana',
+ 'cherry',
+ 'dates',
+ 'gauva',
+ 'pineapple',
+ 'grapes',
+ 'mango']
+
+In [153]: fruits.index('pineapple')
+Out[153]: 6
+
+In [154]: fruits.pop(6)
+Out[154]: 'pineapple'
+
+In [155]: fruits
+Out[155]: ['jackfruit', 'apple', 'banana', 'cherry', 'dates', 'gauva', 'grapes', 'mango']
+
+In [156]: fruits.remove?
+Type:       builtin_function_or_method
+String Form:<built-in method remove of list object at 0x7ff510766bd8>
+Docstring:
+L.remove(value) -- remove first occurrence of value.
+Raises ValueError if the value is not present.
+
+In [157]: fruits.remove('mango')
+
+In [158]: fruits
+Out[158]: ['jackfruit', 'apple', 'banana', 'cherry', 'dates', 'gauva', 'grapes']
+
+In [159]: fruits.remove('mango')
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-159-5e968a8a2c33> in <module>()
+----> 1 fruits.remove('mango')
+
+ValueError: list.remove(x): x not in list
+
+
+
+

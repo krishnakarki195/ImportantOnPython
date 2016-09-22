@@ -1,0 +1,353 @@
+In [98]: # dictionaries
+
+In [99]: semister
+Out[99]: 
+[('bisoo', 'django'),
+ ('hari', 'devops'),
+ ('krishna', 'python'),
+ ('parmesh', 'ec2'),
+ ('prithvi', 'openstack'),
+ ('yugul', 'perl')]
+
+In [100]: # key => value
+
+In [101]: # key is always a unique value
+
+In [102]: # key should always be unique.
+
+In [103]: # ex: key -> ssn,uid,rollno,carno
+
+In [104]: exams = {'bisoo':'django','hari':'devops','krishna':'python','parmesh':'ec2','prithvi':'openstack','yugul':'perl'}
+
+In [105]: print exams
+{'krishna': 'python', 'hari': 'devops', 'yugul': 'perl', 'prithvi': 'openstack', 'bisoo': 'django', 'parmesh': 'ec2'}
+
+In [106]: exams['krishna']
+Out[106]: 'python'
+
+In [107]: exams['bisoo']
+Out[107]: 'django'
+
+In [108]: empty_dictionaries = {}
+
+In [109]: type(empt
+empty_dictionaries  empty_tuples        
+
+In [109]: type(empty_dictionaries)
+Out[109]: dict
+
+In [110]: empty_dict = dic()
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-110-a088123532ca> in <module>()
+----> 1 empty_dict = dic()
+
+NameError: name 'dic' is not defined
+
+In [111]: empty_dict = dict()
+
+In [112]: print empty_dict
+{}
+
+In [113]: # List : ['apple','banana'],[],list()
+
+In [114]: # tuples: ('apple','banana'),(),tuple()
+
+In [115]: # dictionaries: {'a':'apple','b':'banana'},{},dict()
+
+In [117]: exams.
+exams.clear       exams.fromkeys    exams.has_key     exams.iteritems   exams.itervalues  exams.pop         exams.setdefault  exams.values      exams.viewkeys
+exams.copy        exams.get         exams.items       exams.iterkeys    exams.keys        exams.popitem     exams.update      exams.viewitems   exams.viewvalues
+
+In [117]: exams.get['bisoo']
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-117-ea5adfcdfa78> in <module>()
+----> 1 exams.get['bisoo']
+
+TypeError: 'builtin_function_or_method' object has no attribute '__getitem__'
+
+In [118]: exams.get?
+Type:       builtin_function_or_method
+String Form:<built-in method get of dict object at 0x7f756c20cb40>
+Docstring:  D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
+
+In [119]: exams.get('bisoo')
+Out[119]: 'django'
+
+In [120]: exams['bisoo']
+Out[120]: 'django'
+
+In [121]: exams.has_key?>
+  File "<ipython-input-121-03de806dba0d>", line 1
+    exams.has_key?>
+                 ^
+SyntaxError: invalid syntax
+
+
+In [122]: exams.has_key?
+Type:       builtin_function_or_method
+String Form:<built-in method has_key of dict object at 0x7f756c20cb40>
+Docstring:  D.has_key(k) -> True if D has a key k, else False
+
+In [123]: exams.has_key('bisoo')
+Out[123]: True
+
+In [124]: 'bisoo' in exams
+Out[124]: True
+
+In [125]: exmas
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-125-9e52458ef937> in <module>()
+----> 1 exmas
+
+NameError: name 'exmas' is not defined
+
+In [126]: exams
+Out[126]: 
+{'bisoo': 'django',
+ 'hari': 'devops',
+ 'krishna': 'python',
+ 'parmesh': 'ec2',
+ 'prithvi': 'openstack',
+ 'yugul': 'perl'}
+
+In [127]: 'django' in exams
+Out[127]: False
+
+In [129]: exams.
+exams.clear       exams.fromkeys    exams.has_key     exams.iteritems   exams.itervalues  exams.pop         exams.setdefault  exams.values      exams.viewkeys
+exams.copy        exams.get         exams.items       exams.iterkeys    exams.keys        exams.popitem     exams.update      exams.viewitems   exams.viewvalues
+
+In [129]: exams.keys()
+Out[129]: ['krishna', 'hari', 'yugul', 'prithvi', 'bisoo', 'parmesh']
+
+In [130]: exams.values()
+Out[130]: ['python', 'devops', 'perl', 'openstack', 'django', 'ec2']
+
+In [131]: exams.items()
+Out[131]: 
+[('krishna', 'python'),
+ ('hari', 'devops'),
+ ('yugul', 'perl'),
+ ('prithvi', 'openstack'),
+ ('bisoo', 'django'),
+ ('parmesh', 'ec2')]
+
+In [132]: exams.keys()
+Out[132]: ['krishna', 'hari', 'yugul', 'prithvi', 'bisoo', 'parmesh']
+
+In [133]: exams.iterkeys()
+Out[133]: <dictionary-keyiterator at 0x7f756c17fec0>
+
+In [134]: for value in exams.iterkeys():
+   .....:     print value
+   .....:     
+krishna
+hari
+yugul
+prithvi
+bisoo
+parmesh
+
+In [135]: exams.viewkeys()
+Out[135]: dict_keys(['krishna', 'hari', 'yugul', 'prithvi', 'bisoo', 'parmesh'])
+
+In [2]: exams.keys()
+Out[2]: ['krishna', 'hari', 'yugul', 'prithvi', 'bisoo', 'parmesh']
+
+In [3]: exams.iterkeys()
+Out[3]: <dictionary-keyiterator at 0x7fe7577851b0>
+
+In [4]: for key in exams.iterkeys()
+  File "<ipython-input-4-d0011a53b461>", line 1
+    for key in exams.iterkeys()
+                               ^
+SyntaxError: invalid syntax
+
+
+In [5]: for key in exams.iterkeys():
+   ...:     print key
+   ...:     
+krishna
+hari
+yugul
+prithvi
+bisoo
+parmesh
+
+In [6]: exams.viewkeys()
+Out[6]: dict_keys(['krishna', 'hari', 'yugul', 'prithvi', 'bisoo', 'parmesh'])
+
+In [7]: exams.values()
+Out[7]: ['python', 'devops', 'perl', 'openstack', 'django', 'ec2']
+
+In [8]: exams.viewvalues()
+Out[8]: dict_values(['python', 'devops', 'perl', 'openstack', 'django', 'ec2'])
+
+In [9]: exams.itervalue()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-9-ab32de960716> in <module>()
+----> 1 exams.itervalue()
+
+AttributeError: 'dict' object has no attribute 'itervalue'
+
+In [10]: exams.itervalues()
+Out[10]: <dictionary-valueiterator at 0x7fe7576d0310>
+
+In [11]: exams.items()
+Out[11]: 
+[('krishna', 'python'),
+ ('hari', 'devops'),
+ ('yugul', 'perl'),
+ ('prithvi', 'openstack'),
+ ('bisoo', 'django'),
+ ('parmesh', 'ec2')]
+
+In [12]: exams.itervalues()
+Out[12]: <dictionary-valueiterator at 0x7fe7576d0418>
+
+In [13]: exams.iteritems()
+Out[13]: <dictionary-itemiterator at 0x7fe7576d0578>
+
+In [14]: exams.viewitems()
+Out[14]: dict_items([('krishna', 'python'), ('hari', 'devops'), ('yugul', 'perl'), ('prithvi', 'openstack'), ('bisoo', 'django'), ('parmesh', 'ec2')])
+
+In [16]: exams.
+exams.clear       exams.fromkeys    exams.has_key     exams.iteritems   exams.itervalues  exams.pop         exams.setdefault  exams.values      exams.viewkeys
+exams.copy        exams.get         exams.items       exams.iterkeys    exams.keys        exams.popitem     exams.update      exams.viewitems   exams.viewvalues
+
+In [16]: # exams.fromkeys,exams.update,exams.setdefault  => syntax => tutorialpoint
+
+In [17]: exams
+Out[17]: 
+{'bisoo': 'django',
+ 'hari': 'devops',
+ 'krishna': 'python',
+ 'parmesh': 'ec2',
+ 'prithvi': 'openstack',
+ 'yugul': 'perl'}
+
+In [18]: Dexams = exams.copy()
+
+In [19]: Dexams
+Out[19]: 
+{'bisoo': 'django',
+ 'hari': 'devops',
+ 'krishna': 'python',
+ 'parmesh': 'ec2',
+ 'prithvi': 'openstack',
+ 'yugul': 'perl'}
+
+In [20]: # shallow copy
+
+In [21]: # soft copy : the old item and new item both have similar address locations.
+
+In [22]: # deep copy: the old object and new object both have different address locations.
+
+In [23]: # shallow copy : the old object and new object both have different address locations but the inner elements of the obejct still refer to old object.
+
+In [25]: a = [1,2,3]
+
+In [26]: b = ['one','two','three']
+
+In [27]: Cc = [a,b]
+
+In [28]: Cc
+Out[28]: [[1, 2, 3], ['one', 'two', 'three']]
+
+In [29]: id(Cc)
+Out[29]: 140631581532104
+
+In [30]: id(Cc[0])
+Out[30]: 140631581530592
+
+In [31]: id(Cc[1])
+Out[31]: 140631581557896
+
+In [32]: import copy
+
+In [33]: copy.
+copy.Error           copy.copy            copy.dispatch_table  copy.name            copy.weakref         
+copy.PyStringMap     copy.deepcopy        copy.error           copy.t               
+
+In [33]: Dc = copy.copy(Cc)
+
+In [34]: id(Dc)
+Out[34]: 140631581012048
+
+In [35]: Dc is Cc
+Out[35]: False
+
+In [36]: Cc[0] is Dc[0]
+Out[36]: True
+
+In [37]: Cc[1] is Dc[1]
+Out[37]: True
+
+In [38]: Cc
+Out[38]: [[1, 2, 3], ['one', 'two', 'three']]
+
+In [39]: Dc
+Out[39]: [[1, 2, 3], ['one', 'two', 'three']]
+
+In [40]: clear
+
+
+In [41]: exams.
+exams.clear       exams.fromkeys    exams.has_key     exams.iteritems   exams.itervalues  exams.pop         exams.setdefault  exams.values      exams.viewkeys
+exams.copy        exams.get         exams.items       exams.iterkeys    exams.keys        exams.popitem     exams.update      exams.viewitems   exams.viewvalues
+
+In [41]: Dexams
+Out[41]: 
+{'bisoo': 'django',
+ 'hari': 'devops',
+ 'krishna': 'python',
+ 'parmesh': 'ec2',
+ 'prithvi': 'openstack',
+ 'yugul': 'perl'}
+
+In [42]: Dexams.clear()
+
+In [43]: Dexams
+Out[43]: {}
+
+In [44]: exams
+Out[44]: 
+{'bisoo': 'django',
+ 'hari': 'devops',
+ 'krishna': 'python',
+ 'parmesh': 'ec2',
+ 'prithvi': 'openstack',
+ 'yugul': 'perl'}
+
+In [45]: exams.pop?
+Type:       builtin_function_or_method
+String Form:<built-in method pop of dict object at 0x7fe757789168>
+Docstring:
+D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+If key is not found, d is returned if given, otherwise KeyError is raised
+
+In [46]: exams.pop('bisoo')
+Out[46]: 'django'
+
+In [47]: exams
+Out[47]: 
+{'hari': 'devops',
+ 'krishna': 'python',
+ 'parmesh': 'ec2',
+ 'prithvi': 'openstack',
+ 'yugul': 'perl'}
+
+In [48]: exams.
+exams.clear       exams.fromkeys    exams.has_key     exams.iteritems   exams.itervalues  exams.pop         exams.setdefault  exams.values      exams.viewkeys
+exams.copy        exams.get         exams.items       exams.iterkeys    exams.keys        exams.popitem     exams.update      exams.viewitems   exams.viewvalues
+
+In [48]: exams.popitem()
+Out[48]: ('krishna', 'python')
+
+
+
+

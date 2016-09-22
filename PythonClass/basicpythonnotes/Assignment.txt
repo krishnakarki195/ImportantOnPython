@@ -1,0 +1,37 @@
+days = ['yesterday','today','tomorrow','dayafter']
+
+yesterday  9 
+today      5
+tomorrow   8
+dayafter   8
+
+In [3]: days = ['yesterday','today','tomorrow','dayafter']
+
+In [4]: for value in days:
+   ...:     print value,len
+   ...:     
+KeyboardInterrupt
+
+In [4]: for value in days:
+    print value,len(value)
+   ...:     
+yesterday 9
+today 5
+tomorrow 8
+dayafter 8
+
+
+
+Yesterday
+TOday
+TOMorrow
+DAYAafter   
+
+In [14]: for value in days:
+    print value[:days.index(value) + 1].upper() + value[days.index(value) + 1:]
+   ....:     
+Yesterday
+TOday
+TOMorrow
+DAYAfter
+

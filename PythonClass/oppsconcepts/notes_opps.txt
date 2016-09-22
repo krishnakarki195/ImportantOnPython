@@ -1,0 +1,312 @@
+object oriented programming
+
+- Functional programming
+
+A - Abstraction
+
+- example 1:
+
+car            -> class/blueprint/classobj
+  + color      + variables/attributes
+  + wheels
+  + body
+  - clutch()   - functions/methods
+  - break()
+  - acceleration()
+  
+Objects/instance
+  - honda
+  - toyatta
+  - mustang
+  - tesla
+
+- example 2:
+
+Villas - class - blueprint
+objects
+ 
+  
+
+P - Polymorphism ( many forms)
+
++ 
+add numbers
+add strings
+
+In [1]: 1 + 1
+Out[1]: 2
+
+In [2]: 'a' + 'b'
+Out[2]: 'ab'
+
+
+Bank Interests ( Intrest is polymorphic)
+ - education interest
+ - car loan intrerest
+ - personal loan intrest
+
+I - Inheritance
+
+ you inherit some features from your parents.
+ 
+ father ( right handed)
+ mother ( left handed)
+   son ( left handed)  - inherited the features from your mother.
+  
+E - Encapsulation
+ Hinding the data.
+ giving least importance to data and looking more into functionality.
+
+balance - data
+i dont want them to directly manipulate the data.( balance)
+
+# functions  to deal with when i modify the balance variables.
+deposit()
+withdraw()
+
+-- day 2 notes ---
+
+In [2]: class myaccount:
+   ...:     balance = 0
+   ...:     def my_account(self):
+   ...:         print "my balance is {}".format(balance)
+   ...:         
+
+In [3]: type(myaccount)
+Out[3]: classobj
+
+In [4]: san = myaccount()
+
+In [5]: type(san)
+Out[5]: instance
+
+In [6]: san.
+san.balance     san.my_account  
+
+In [6]: san.balance
+Out[6]: 0
+
+In [7]: san.my_account()
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-7-f8239dc19379> in <module>()
+----> 1 san.my_account()
+
+<ipython-input-2-62a15842c37c> in my_account(self)
+      2     balance = 0
+      3     def my_account(self):
+----> 4         print "my balance is {}".format(balance)
+      5 
+
+NameError: global name 'balance' is not defined
+
+In [8]: class myaccount:
+    balance = 0
+    def my_account(self):
+        print "my balance is {}".format(san.balance)
+   ...:         
+
+In [9]: san = myaccount()
+
+In [10]: san.balance
+Out[10]: 0
+
+In [11]: san.my_account()
+my balance is 0
+
+In [12]: san.balance=1000
+
+In [13]: san.my_account()
+my balance is 1000
+
+In [14]: yugul = myaccount()
+
+In [15]: yugul.balance
+Out[15]: 0
+
+In [16]: yugul.
+yugul.balance     yugul.my_account  
+
+In [16]: yugul.my_account
+Out[16]: <bound method myaccount.my_account of <__main__.myaccount instance at 0x7f5191747f38>>
+
+In [17]: yugul.my_account()
+my balance is 1000
+
+In [18]: class myaccount:
+    balance = 0
+    def my_account(self):
+        print "my balance is {}".format(self.balance)
+   ....:         
+
+In [19]: san.my_account()
+my balance is 1000
+
+In [20]: san = my_account()
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-20-d4a5fc603f13> in <module>()
+----> 1 san = my_account()
+
+NameError: name 'my_account' is not defined
+
+In [21]: san = myaccount()
+
+In [22]: yugul = myaccount()
+
+In [23]: san.balance=1000
+
+In [24]: yugul.balance
+Out[24]: 0
+
+In [25]: san.my_account()
+my balance is 1000
+
+In [26]: yugul.my_account()
+my balance is 0
+
+In [28]: # constructor
+
+In [29]: class myaccount:
+    balance = 0
+    def my_account(self):
+        print "my balance is {}".format(self.balance)
+   ....:         
+
+In [30]: class myaccount:
+   ....:     def bal(self):
+   ....:         self.balance=0
+   ....:     def my_account(self):
+   ....:         print "my balance is {}".format(self.balance)
+   ....:         
+
+In [31]: class myaccount:
+    def __init__(self):
+        self.balance=0
+    def my_account(self):
+        print "my balance is {}".format(self.balance)
+   ....:         
+
+In [32]: parmesh = myaccount()
+
+In [33]: parmesh.
+parmesh.balance     parmesh.my_account  
+
+In [33]: parmesh.balance
+Out[33]: 0
+
+In [34]: parmesh.my_account()
+my balance is 0
+
+In [35]: parmesh.balance=1000
+
+In [36]: parmesh.my_account()
+my balance is 1000
+
+In [37]: pritivi = myaccount()
+
+In [38]: prithivi.balance
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-38-db1fffbebd02> in <module>()
+----> 1 prithivi.balance
+
+NameError: name 'prithivi' is not defined
+
+In [39]: pritivi.balance
+Out[39]: 0
+
+In [40]: pritivi.my_account()
+my balance is 0
+
+In [41]: parmesh.balance
+Out[41]: 1000
+
+In [42]: pri
+print    pritivi  
+
+In [42]: pritivi.balance
+Out[42]: 0
+
+In [44]: class father:
+   ....:     hands="righty"
+   ....:     occu="doctor"
+   ....:     
+
+In [45]: class mother:
+   ....:     hands="lefty"
+   ....:     occu="architect"
+   ....:     
+
+In [46]: class child(mother,father)
+  File "<ipython-input-46-b67370116f9c>", line 1
+    class child(mother,father)
+                              ^
+SyntaxError: invalid syntax
+
+
+In [47]: class child(mother,father):
+   ....:     occu='actor'
+   ....:     
+
+In [48]: krishna = child()
+
+In [49]: krishna.
+krishna.hands  krishna.occu   
+
+In [49]: krishna.occu
+Out[49]: 'actor'
+
+In [50]: krishna.hands
+Out[50]: 'lefty'
+
+
+
+
+
+References:
+https://github.com/tuxfux-hlp/Python-examples/blob/master/opps/Good_links.txt
+http://www.rafekettler.com/magicmethods.html
+http://radek.io/2011/07/21/private-protected-and-public-in-python/
+
+Other links:
+# APIE
+Abstraction : https://www.youtube.com/watch?v=mNOXCQpPsk0&list=PLqlI1RpjIS59ziAx7YBqQ0rtyAcpgdsjm&index=9
+Polymorphism:https://www.youtube.com/watch?v=Nw6gYQzNfF0&list=PLqlI1RpjIS59ziAx7YBqQ0rtyAcpgdsjm&index=12 
+Inheritance:https://www.youtube.com/watch?v=nTuLW6Mnas4&index=11&list=PLqlI1RpjIS59ziAx7YBqQ0rtyAcpgdsjm
+Encapsulation: https://www.youtube.com/watch?v=QJXzOfFRJrE&index=10&list=PLqlI1RpjIS59ziAx7YBqQ0rtyAcpgdsjm
+
+# Object Oriented Programming:
+
+http://anandology.com/python-practice-book/object_oriented_programming.html
+http://www.python-course.eu/object_oriented_programming.php
+http://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/
+http://www4.ncsu.edu/~kaltofen/courses/Languages/PythonExamples/python-lectures/_build/html/lectures/three.html
+
+# Encapsulation:
+
+http://radek.io/2011/07/21/private-protected-and-public-in-python/
+https://importantshock.wordpress.com/2006/11/03/adventures-in-pythonic-encapsulation/
+
+# Operator overloading
+
+http://anandology.com/python-practice-book/object_oriented_programming.html#special-class-methods
+
+# Functions overloading and overriding
+http://lgiordani.com/blog/2014/05/19/method-overriding-in-python/#.ViKC29___VM
+
+# Iterators and Generators and Decorators
+http://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/
+http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/
+
+# Some Exercises
+http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-01sc-introduction-to-electrical-engineering-and-computer-science-i-spring-2011/unit-1-software-engineering/object-oriented-programming/
+
+
+
+
+
+
+
+
+

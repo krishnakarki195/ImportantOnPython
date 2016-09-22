@@ -1,0 +1,482 @@
+In [1]: import re
+
+In [2]: re.
+re.DEBUG        re.L            re.S            re.U            re.compile      re.findall      re.search       re.sub          
+re.DOTALL       re.LOCALE       re.Scanner      re.UNICODE      re.copy_reg     re.finditer     re.split        re.subn         
+re.I            re.M            re.T            re.VERBOSE      re.error        re.match        re.sre_compile  re.sys          
+re.IGNORECASE   re.MULTILINE    re.TEMPLATE     re.X            re.escape       re.purge        re.sre_parse    re.template     
+
+In [2]: my_string='python'
+
+In [3]: re.match?
+Type:       function
+String Form:<function match at 0x7f104eecec80>
+File:       /usr/lib/python2.7/re.py
+Definition: re.match(pattern, string, flags=0)
+Docstring:
+Try to apply the pattern at the start of the string, returning
+a match object, or None if no match was found.
+
+In [4]: re.match('p',my_string)
+Out[4]: <_sre.SRE_Match at 0x7f104b8b5cc8>
+
+In [5]: re.match('py',my_string)
+Out[5]: <_sre.SRE_Match at 0x7f104b8b5f38>
+
+In [6]: re.match('pyt',my_string)
+Out[6]: <_sre.SRE_Match at 0x7f104a9af098>
+
+In [7]: re.match('pyth',my_string)
+Out[7]: <_sre.SRE_Match at 0x7f104b8b5a58>
+
+In [8]: re.match('python',my_string)
+Out[8]: <_sre.SRE_Match at 0x7f104b8b5d30>
+
+In [9]: re.match('pythons',my_string)
+
+In [10]: re.match('P',my_string)
+
+In [11]: re.match('P',my_string,re.IGNORECASE)
+Out[11]: <_sre.SRE_Match at 0x7f104b8b5e68>
+
+In [13]: my_sentence="python is a great language."
+
+In [14]: my_sentence1="one of the great languages is python."
+
+In [15]: re.match?
+Type:       function
+String Form:<function match at 0x7f104eecec80>
+File:       /usr/lib/python2.7/re.py
+Definition: re.match(pattern, string, flags=0)
+Docstring:
+Try to apply the pattern at the start of the string, returning
+a match object, or None if no match was found.
+
+In [16]: re.match('python',my_sentence)
+Out[16]: <_sre.SRE_Match at 0x7f104a9af168>
+
+In [17]: re.match('python',my_sentence1)
+
+In [18]: re.search?
+Type:       function
+String Form:<function search at 0x7f104eececf8>
+File:       /usr/lib/python2.7/re.py
+Definition: re.search(pattern, string, flags=0)
+Docstring:
+Scan through string looking for a match to the pattern, returning
+a match object, or None if no match was found.
+
+In [19]: re.search('python',my_sentence)
+Out[19]: <_sre.SRE_Match at 0x7f104a9af238>
+
+In [20]: re.search('python',my_sentence1)
+Out[20]: <_sre.SRE_Match at 0x7f104a9af2a0>
+
+In [22]: # compile
+
+In [23]: re.compile?
+Type:       function
+String Form:<function compile at 0x7f104eec8050>
+File:       /usr/lib/python2.7/re.py
+Definition: re.compile(pattern, flags=0)
+Docstring:  Compile a regular expression pattern, returning a pattern object.
+
+In [24]: my_sentence
+Out[24]: 'python is a great language.'
+
+In [25]: my_sentence1
+Out[25]: 'one of the great languages is python.'
+
+In [26]: reg = re.compile('python',re.I)
+
+In [27]: reg
+Out[27]: re.compile(r'python', re.IGNORECASE)
+
+In [28]: type(reg)
+Out[28]: _sre.SRE_Pattern
+
+In [29]: reg.match?
+Type:       builtin_function_or_method
+String Form:<built-in method match of _sre.SRE_Pattern object at 0x7f104bd03990>
+Docstring:
+match(string[, pos[, endpos]]) --> match object or None.
+Matches zero or more characters at the beginning of the string
+
+In [30]: reg.match(my_sentence)
+Out[30]: <_sre.SRE_Match at 0x7f104a9af370>
+
+In [31]: reg.search(my_sentence)
+Out[31]: <_sre.SRE_Match at 0x7f104a9af440>
+
+In [32]: reg.search(my_sentence1)
+Out[32]: <_sre.SRE_Match at 0x7f104a9af6b0>
+
+In [33]: reg.match(my_sentence1)
+
+In [35]: # special characters
+
+In [36]: # ^ - caret - beginning of a sentence.
+
+In [37]: # $ - dollar - end of a sentence
+
+In [38]: # . - dot - one element of  a pattern
+
+In [39]: my_sentence
+Out[39]: 'python is a great language.'
+
+In [40]: my_sentence1
+Out[40]: 'one of the great languages is python.'
+
+In [41]: reg
+Out[41]: re.compile(r'python', re.IGNORECASE)
+
+In [42]: reg1 = re.compile('^python',re.I)
+
+In [43]: reg1
+Out[43]: re.compile(r'^python', re.IGNORECASE)
+
+In [44]: reg.search(my_sentence)
+Out[44]: <_sre.SRE_Match at 0x7f104a9af3d8>
+
+In [45]: reg.search(my_sentence1)
+Out[45]: <_sre.SRE_Match at 0x7f104a9af988>
+
+In [46]: reg1.search(my_sentence)
+Out[46]: <_sre.SRE_Match at 0x7f104a9afb28>
+
+In [47]: reg1.search(my_sentence1)
+
+In [48]: reg2 = re.compile('python.$')
+
+In [49]: reg2
+Out[49]: re.compile(r'python.$')
+
+In [50]: reg2.search(my_sentence)
+
+In [51]: reg2.search(my_sentence1)
+Out[51]: <_sre.SRE_Match at 0x7f104a9afd98>
+
+In [53]: names = ['hari','kishore','krishna','yugul','uday','thapa','khatri']
+
+In [54]: reg3 = re.compile('....')
+
+In [55]: reg3
+Out[55]: re.compile(r'....')
+
+In [56]: for name in names:
+   ....:     if reg3.match(name):
+   ....:         print reg3.match(name).group()
+   ....:         
+hari
+kish
+kris
+yugu
+uday
+thap
+khat
+
+In [57]: reg3 = re.compile('^....$')
+
+In [58]: for name in names:
+    if reg3.match(name):
+        print reg3.match(name).group()
+   ....:         
+hari
+uday
+
+In [60]: # globbling characters
+
+In [61]: # * - zero or more characters
+
+In [62]: # + - one or more characters
+
+In [63]: # ? - zero or one characters
+
+In [64]: film1 = "ashique"
+
+In [65]: film2 = "aashique"
+
+In [66]: film3 = "aaashique"
+
+In [67]: film4 = 'shique'
+
+In [68]: reg = re.compile('a*shique')
+
+In [69]: reg.match(film1)
+Out[69]: <_sre.SRE_Match at 0x7f104a9afa58>
+
+In [70]: reg.match(film2)
+Out[70]: <_sre.SRE_Match at 0x7f104a9af780>
+
+In [71]: reg.match(film3)
+Out[71]: <_sre.SRE_Match at 0x7f104a9aff38>
+
+In [72]: reg.match(film4)
+Out[72]: <_sre.SRE_Match at 0x7f104a9afcc8>
+
+In [73]: reg1 = re.compile('a+shique')
+
+In [74]: reg1.match(film4)
+
+In [75]: reg1.match(film1)
+Out[75]: <_sre.SRE_Match at 0x7f104a9be168>
+
+In [76]: reg1.match(film2)
+Out[76]: <_sre.SRE_Match at 0x7f104a9be098>
+
+In [77]: reg1.match(film3)
+Out[77]: <_sre.SRE_Match at 0x7f104a9be1d0>
+
+In [78]: reg1.match(film4)
+
+In [80]: film1
+Out[80]: 'ashique'
+
+In [81]: film2
+Out[81]: 'aashique'
+
+In [82]: film3
+Out[82]: 'aaashique'
+
+In [83]: film4
+Out[83]: 'shique'
+
+In [84]: # ? - zero or one characters
+
+In [85]: reg3 = re.compile('a?shique')
+
+In [86]: reg3.match(film1)
+Out[86]: <_sre.SRE_Match at 0x7f104a9be2a0>
+
+In [87]: reg3.match(film2)
+
+In [88]: reg3.search(film2)
+Out[88]: <_sre.SRE_Match at 0x7f104a9be238>
+
+In [89]: # aashique -> a?shique(ashique,shique) => match always fails => search true the abvoe case
+
+In [111]: my_string="<H1>hello<H1>"
+
+In [112]: re.search?
+Type:       function
+String Form:<function search at 0x7f104eececf8>
+File:       /usr/lib/python2.7/re.py
+Definition: re.search(pattern, string, flags=0)
+Docstring:
+Scan through string looking for a match to the pattern, returning
+a match object, or None if no match was found.
+
+In [113]: re.search("<.*>",my_string)
+Out[113]: <_sre.SRE_Match at 0x7f104a9be578>
+
+In [114]: re.search("<.*>",my_string).group()
+Out[114]: '<H1>hello<H1>'
+
+In [115]: # mininal matching - ??,*?,+?
+
+In [116]: re.search("<.*?>",my_string).group()
+Out[116]: '<H1>'
+
+In [118]: # anchors
+
+In [119]: # {m} -> a character repeated m number of times
+
+In [120]: # {m,n} -> a character repeated between m or n number of times.
+
+In [121]: # {m,} -> a character repeated m or more number of times
+
+In [122]: film2
+Out[122]: 'aashique'
+
+In [123]: film1
+Out[123]: 'ashique'
+
+In [124]: film3
+Out[124]: 'aaashique'
+
+In [125]: film4
+Out[125]: 'shique'
+
+In [126]: reg = re.compile('a{1,3}shique')
+
+In [127]: reg.match(film1)
+Out[127]: <_sre.SRE_Match at 0x7f104a9be308>
+
+In [128]: reg.match(film2)
+Out[128]: <_sre.SRE_Match at 0x7f104a9be510>
+
+In [129]: reg.match(film3)
+Out[129]: <_sre.SRE_Match at 0x7f104a9be6b0>
+
+In [130]: reg.match(film4)
+
+In [132]: # character sets
+
+In [133]: # [a-z] => having characters from a to z
+
+In [134]: # [0-9] => having digits from 0 to 9
+
+In [135]: # [^a-b] => Not having characters from a to z.
+
+In [136]: # ^[a-z] => starting with the character set.
+
+In [137]: # [.*+?] => they behave like literal symbols.
+
+In [138]: my_sentence="python is a great language."
+
+In [139]: re.match('[a-z]',my_sentence)
+Out[139]: <_sre.SRE_Match at 0x7f104a9be718>
+
+In [140]: re.match('[a-z]',my_sentence).group()
+Out[140]: 'p'
+
+In [141]: re.match('[a-z]+',my_sentence).group()
+Out[141]: 'python'
+
+In [142]: re.match('[a-z]+ ',my_sentence).group()
+Out[142]: 'python '
+
+In [143]: re.match('[a-z]+\s+',my_sentence).group()
+Out[143]: 'python '
+
+In [144]: re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+',my_sentence).group()
+Out[144]: 'python is a great '
+
+In [145]: re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z.]+',my_sentence).group()
+Out[145]: 'python is a great language.'
+
+In [146]: re.match('(\w+\s+){4}[a-z.]+',my_sentence).group()
+Out[146]: 'python is a great language.'
+
+In [148]: re.match('(\w+\s+){4}[a-z.]+',my_sentence).group()
+Out[148]: 'python is a great language.'
+
+In [149]: # verbose
+
+In [150]: re.
+re.DEBUG        re.L            re.S            re.U            re.compile      re.findall      re.search       re.sub          
+re.DOTALL       re.LOCALE       re.Scanner      re.UNICODE      re.copy_reg     re.finditer     re.split        re.subn         
+re.I            re.M            re.T            re.VERBOSE      re.error        re.match        re.sre_compile  re.sys          
+re.IGNORECASE   re.MULTILINE    re.TEMPLATE     re.X            re.escape       re.purge        re.sre_parse    re.template     
+
+In [150]: re.match('''
+   .....: (\w+\s+)    # a word and a space     
+   .....: {4}         # the above pattern repeated 4 times.
+   .....: [a-z.]+     # a word repeated with a full stop.
+   .....: ''',my_sentence,re.X).group()
+Out[150]: 'python is a great language.'
+
+In [151]: # grouping
+
+In [152]: re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z.]+',my_sentence).group()
+Out[152]: 'python is a great language.'
+
+In [153]: re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z.]+',my_sentence).group(0)
+Out[153]: 'python is a great language.'
+
+In [154]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z.]+)',my_sentence).group()
+Out[154]: 'python is a great language.'
+
+In [155]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z.]+)',my_sentence).group(1)
+Out[155]: 'python'
+
+In [156]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z.]+)',my_sentence).group(2)
+Out[156]: 'language.'
+
+In [157]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z.]+)',my_sentence).groups()
+Out[157]: ('python', 'language.')
+
+In [158]: re.match('(?P<lang>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+(?P<lang1>[a-z.]+)',my_sentence).group('lang')
+Out[158]: 'python'
+
+In [159]: re.match('(?P<lang>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+(?P<lang1>[a-z.]+)',my_sentence).group('lang1')
+Out[159]: 'language.'
+
+In [164]: my_string="May 27 07:49:41 tuxfuxhlp-VirtualBox kernel: [33738.334726] usb 1-1: Manufacturer: VirtualBox"
+
+In [165]: print my_string
+May 27 07:49:41 tuxfuxhlp-VirtualBox kernel: [33738.334726] usb 1-1: Manufacturer: VirtualBox
+
+In [166]: re.search('[a-z]+-[a-z]+',my_string)
+
+In [167]: re.search('[a-z]+[-][a-z]+',my_string)
+
+In [168]: re.search('[a-z]+[-][a-z]+',my_string,re.I)
+Out[168]: <_sre.SRE_Match at 0x7f104a9be8b8>
+
+In [169]: re.search('[a-z]+[-][a-z]+',my_string,re.I).group()
+Out[169]: 'tuxfuxhlp-VirtualBox'
+
+In [170]: m = re.search('[a-z]+[-][a-z]+',my_string,re.I).group()
+
+In [171]: print m
+tuxfuxhlp-VirtualBox
+
+In [172]: type(m)
+Out[172]: str
+
+In [173]: m.
+m.capitalize  m.encode      m.format      m.isdigit     m.isupper     m.lstrip      m.rindex      m.rstrip      m.strip       m.upper       
+m.center      m.endswith    m.index       m.islower     m.join        m.partition   m.rjust       m.split       m.swapcase    m.zfill       
+m.count       m.expandtabs  m.isalnum     m.isspace     m.ljust       m.replace     m.rpartition  m.splitlines  m.title       
+m.decode      m.find        m.isalpha     m.istitle     m.lower       m.rfind       m.rsplit      m.startswith  m.translate   
+
+In [173]: m = re.search('[a-z]+[-][a-z]+',my_string,re.I)
+
+In [174]: m
+Out[174]: <_sre.SRE_Match at 0x7f104a9be7e8>
+
+In [175]: type(m)
+Out[175]: _sre.SRE_Match
+
+In [176]: m.
+m.end        m.expand     m.groupdict  m.lastgroup  m.pos        m.regs       m.start      
+m.endpos     m.group      m.groups     m.lastindex  m.re         m.span       m.string     
+
+In [176]: m.start
+Out[176]: <function start>
+
+In [177]: m.start()
+Out[177]: 16
+
+In [178]: m.end()
+Out[178]: 36
+
+In [179]: my_string[:m.start()] + my_string[m.end():]
+Out[179]: 'May 27 07:49:41  kernel: [33738.334726] usb 1-1: Manufacturer: VirtualBox'
+
+In [200]: # Multiline
+
+In [201]: my_string = "python is a good language.\npython is a easy lanaguge.\npython is my first language"
+
+In [202]: print my_string
+python is a good language.
+python is a easy lanaguge.
+python is my first language
+
+In [203]: re.search('python',my_string)
+Out[203]: <_sre.SRE_Match at 0x7f104a9be988>
+
+In [204]: re.search('python',my_string).group()
+Out[204]: 'python'
+
+In [205]: re.match('python',my_string).group()
+Out[205]: 'python'
+
+In [206]: re.findall('python',my_string(
+   .....: 
+KeyboardInterrupt
+
+In [206]: re.findall('python',my_string)
+Out[206]: ['python', 'python', 'python']
+
+In [207]: re.findall('^python',my_string)
+Out[207]: ['python']
+
+In [208]: re.findall('^python',my_string,re.M)
+Out[208]: ['python', 'python', 'python']
+
+
+References:
+https://docs.python.org/2/library/re.html
+https://docs.python.org/2/howto/regex.html

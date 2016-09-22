@@ -1,0 +1,82 @@
+Installation
+--------------
+
+Ubuntu/Debian/Linuxmint
+--------------------------
+
+* sudo apt-get install python   (2.x)
+* sudo apt-get install python3  (3.x)
+* sudo apt-get install ipython  (2.x)
+* sudo apt-get install ipython3 (3.x)
+* sudo apt-get install bpython  (2.x)
+* sudo apt-get install bpython3 (3.x)
+
+Redhat/Fedora/Centos
+-----------------------
+* yum install python   (2.x)
+* yum install python3  (3.x)
+* yum install ipython  (2.x)
+* yum install ipython3 (3.x)
+* yum install bpython  (2.x)
+* yum install bpython3 (3.x)
+
+Windows
+---------
+https://www.continuum.io/downloads#_windows
+(python,ipython)
+
+IDE
+----
+http://i.stack.imgur.com/ItVKB.png
+http://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+In [1]: my_string="python"
+
+In [2]: type(my_string)
+Out[2]: str
+
+In [3]: my_number = 1.0
+
+In [4]: type(my_number)
+Out[4]: float
+
+In [5]: my_number1 = 2.0
+
+In [6]: type(my_number1)
+Out[6]: float
+
+In [7]: my_number1 = 2
+
+In [8]: type(my_number1)
+Out[8]: int
+
+In [10]: my_string
+Out[10]: 'python'
+
+In [11]: my_string.
+my_string.capitalize  my_string.expandtabs  my_string.isdigit     my_string.ljust       my_string.rindex      my_string.splitlines  my_string.upper
+my_string.center      my_string.find        my_string.islower     my_string.lower       my_string.rjust       my_string.startswith  my_string.zfill
+my_string.count       my_string.format      my_string.isspace     my_string.lstrip      my_string.rpartition  my_string.strip       
+my_string.decode      my_string.index       my_string.istitle     my_string.partition   my_string.rsplit      my_string.swapcase    
+my_string.encode      my_string.isalnum     my_string.isupper     my_string.replace     my_string.rstrip      my_string.title       
+my_string.endswith    my_string.isalpha     my_string.join        my_string.rfind       my_string.split       my_string.translate   
+
+In [11]: my_string.upper?
+Type:       builtin_function_or_method
+String Form:<built-in method upper of str object at 0x7f5a1f57afc0>
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+
+In [12]: my_number.
+my_number.as_integer_ratio  my_number.fromhex           my_number.imag              my_number.real              
+my_number.conjugate         my_number.hex               my_number.is_integer        
+
+In [12]: my_number1.
+my_number1.bit_length   my_number1.conjugate    my_number1.denominator  my_number1.imag         my_number1.numerator    my_number1.real
+
+In [12]: 
+
+
+

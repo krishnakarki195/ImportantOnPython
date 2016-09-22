@@ -1,0 +1,11 @@
+May 27 07:49:41 tuxfuxhlp-VirtualBox kernel: [33738.334726] usb 1-1: Manufacturer: VirtualBox
+May 27 07:49:41 tuxfuxhlp-VirtualBox kernel: [33738.349799] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0003/input/input9
+May 27 07:49:41 tuxfuxhlp-VirtualBox mtp-probe: checking bus 1, device 4: "/sys/devices/pci0000:00/0000:00:06.0/usb1/1-1"
+May 27 07:49:41 tuxfuxhlp-VirtualBox mtp-probe: bus: 1, device: 4 was not an MTP device
+May 27 07:49:41 tuxfuxhlp-VirtualBox kernel: [33738.458896] hid-generic 0003:80EE:0021.0003: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+May 27 07:49:42 tuxfuxhlp-VirtualBox NetworkManager[810]: <info> (eth0): carrier now OFF (device state 100, deferring action for 4 seconds)
+May 27 07:49:42 tuxfuxhlp-VirtualBox kernel: [33739.170226] e1000: eth0 NIC Link is Down
+May 27 07:49:46 tuxfuxhlp-VirtualBox NetworkManager[810]: <info> (eth0): carrier now ON (device state 100)
+May 27 07:49:46 tuxfuxhlp-VirtualBox kernel: [33743.178953] e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+May 28 05:52:04 tuxfuxhlp-VirtualBox cinnamon-screensaver-dialog: pam_ecryptfs: seteuid error
+

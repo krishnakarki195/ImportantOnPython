@@ -1,0 +1,66 @@
+In [2]: import exceptions as e
+
+In [3]: e.
+e.ArithmeticError            e.FloatingPointError         e.LookupError                e.StandardError              e.UnicodeEncodeError
+e.AssertionError             e.FutureWarning              e.MemoryError                e.StopIteration              e.UnicodeError
+e.AttributeError             e.GeneratorExit              e.NameError                  e.SyntaxError                e.UnicodeTranslateError
+e.BaseException              e.IOError                    e.NotImplementedError        e.SyntaxWarning              e.UnicodeWarning
+e.BufferError                e.ImportError                e.OSError                    e.SystemError                e.UserWarning
+e.BytesWarning               e.ImportWarning              e.OverflowError              e.SystemExit                 e.ValueError
+e.DeprecationWarning         e.IndentationError           e.PendingDeprecationWarning  e.TabError                   e.Warning
+e.EOFError                   e.IndexError                 e.ReferenceError             e.TypeError                  e.ZeroDivisionError
+e.EnvironmentError           e.KeyError                   e.RuntimeError               e.UnboundLocalError          
+e.Exception                  e.KeyboardInterrupt          e.RuntimeWarning             e.UnicodeDecodeError         
+
+In [3]: raise SystemError
+---------------------------------------------------------------------------
+SystemError                               Traceback (most recent call last)
+<ipython-input-3-a82e9fa7366d> in <module>()
+----> 1 raise SystemError
+
+SystemError: 
+
+In [4]: pint hello
+  File "<ipython-input-4-37821bb52fd6>", line 1
+    pint hello
+             ^
+SyntaxError: invalid syntax
+
+
+In [5]: raise SystemError,"buddy please clean your glasses"
+---------------------------------------------------------------------------
+SystemError                               Traceback (most recent call last)
+<ipython-input-5-26edd284c50d> in <module>()
+----> 1 raise SystemError,"buddy please clean your glasses"
+
+SystemError: buddy please clean your glasses
+
+In [7]: raise santosh
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-7-460ec4d018fb> in <module>()
+----> 1 raise santosh
+
+NameError: name 'santosh' is not defined
+
+In [8]: class santosh(Exception):
+   ...:     pass
+   ...: 
+
+In [9]: raise santosh
+---------------------------------------------------------------------------
+santosh                                   Traceback (most recent call last)
+<ipython-input-9-460ec4d018fb> in <module>()
+----> 1 raise santosh
+
+santosh: 
+
+In [10]: raise santosh,"hey i am back"
+---------------------------------------------------------------------------
+santosh                                   Traceback (most recent call last)
+<ipython-input-10-0e923106169b> in <module>()
+----> 1 raise santosh,"hey i am back"
+
+santosh: hey i am back
+
+

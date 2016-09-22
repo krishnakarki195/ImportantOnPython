@@ -1,0 +1,352 @@
+python 
+
+connect to multiple database.
+
+Mysql
+
+1) Installing the mysql-server
+ - sudo apt-get install mysql-server
+   - server,client(mysql)
+ - mysqlworkbench (gui client)
+
+or
+
+* Mariadb
+
+2) driver to connect to mysql server
+# sudo apt-get install python-mysqldb ( MySQLdb)
+
+
+
+-- notes on  mysql -- 
+
+mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 39
+Server version: 5.5.44-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+
+mysql> help contents;
+You asked for help about help category: "Contents"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Account Management
+   Administration
+   Compound Statements
+   Data Definition
+   Data Manipulation
+   Data Types
+   Functions
+   Functions and Modifiers for Use with GROUP BY
+   Geographic Features
+   Help Metadata
+   Language Structure
+   Plugins
+   Procedures
+   Storage Engines
+   Table Maintenance
+   Transactions
+   User-Defined Functions
+   Utility
+
+mysql> help funtions;
+
+Nothing found
+Please try to run 'help contents' for a list of all accessible topics
+
+mysql> help Functions;
+You asked for help about help category: "Functions"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Bit Functions
+   Comparison operators
+   Control flow functions
+   Date and Time Functions
+   Encryption Functions
+   Information Functions
+   Logical operators
+   Miscellaneous Functions
+   Numeric Functions
+   String Functions
+
+mysql> help Information Functions;
+You asked for help about help category: "Information Functions"
+For more information, type 'help <item>', where <item> is one of the following
+topics:
+   BENCHMARK
+   CHARSET
+   COERCIBILITY
+   COLLATION
+   CONNECTION_ID
+   CURRENT_USER
+   DATABASE
+   FOUND_ROWS
+   LAST_INSERT_ID
+   ROW_COUNT
+   SCHEMA
+   SESSION_USER
+   SYSTEM_USER
+   USER
+   VERSION
+
+mysql> help version;
+Name: 'VERSION'
+Description:
+Syntax:
+VERSION()
+
+Returns a string that indicates the MySQL server version. The string
+uses the utf8 character set. The value might have a suffix in addition
+to the version number. See the description of the version system
+variable in
+http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html.
+
+URL: http://dev.mysql.com/doc/refman/5.5/en/information-functions.html
+
+Examples:
+mysql> SELECT VERSION();
+        -> '5.5.44-standard'
+
+mysql> select version();
++-------------------------+
+| version()               |
++-------------------------+
+| 5.5.44-0ubuntu0.14.04.1 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> help user;
+Name: 'USER'
+Description:
+Syntax:
+USER()
+
+Returns the current MySQL user name and host name as a string in the
+utf8 character set.
+
+URL: http://dev.mysql.com/doc/refman/5.5/en/information-functions.html
+
+Examples:
+mysql> SELECT USER();
+        -> 'davida@localhost'
+
+mysql> select user();
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> help create;
+Many help items for your request exist.
+To make a more specific request, please type 'help <item>',
+where <item> is one of the following
+topics:
+   CREATE DATABASE
+   CREATE EVENT
+   CREATE FUNCTION
+   CREATE FUNCTION UDF
+   CREATE INDEX
+   CREATE LOGFILE GROUP
+   CREATE PROCEDURE
+   CREATE SERVER
+   CREATE TABLE
+   CREATE TABLESPACE
+   CREATE TRIGGER
+   CREATE USER
+   CREATE VIEW
+   SHOW
+   SHOW CREATE DATABASE
+   SHOW CREATE EVENT
+   SHOW CREATE FUNCTION
+   SHOW CREATE PROCEDURE
+   SHOW CREATE TABLE
+   SPATIAL
+
+mysql> help create database;
+Name: 'CREATE DATABASE'
+Description:
+Syntax:
+CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
+    [create_specification] ...
+
+create_specification:
+    [DEFAULT] CHARACTER SET [=] charset_name
+  | [DEFAULT] COLLATE [=] collation_name
+
+CREATE DATABASE creates a database with the given name. To use this
+statement, you need the CREATE privilege for the database. CREATE
+SCHEMA is a synonym for CREATE DATABASE.
+
+URL: http://dev.mysql.com/doc/refman/5.5/en/create-database.html
+
+
+mysql> create database batch46;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch46            |
+| contact_db         |
+| mysql              |
+| performance_schema |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> help create user;
+
+mysql> create user 'user46'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> help grant;
+mysql> grant all on batch46.* to 'user46'@'localhost' identified by 'user46';
+Query OK, 0 rows affected (0.00 sec)
+
+key2gyaan@key2gyaan ~/Documents/Technical/Projects/batch-46 $ mysql -u user46 -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 40
+Server version: 5.5.44-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select user();
++------------------+
+| user()           |
++------------------+
+| user46@localhost |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch46            |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> use batch46;
+Database changed
+mysql> 
+mysql> select database();
++------------+
+| database() |
++------------+
+| batch46    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> help create table;
+
+-- run create.py program --
+
+mysql> show tables;
++-------------------+
+| Tables_in_batch46 |
++-------------------+
+| students          |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> desc studentsl
+    -> \c
+mysql> 
+mysql> desc students;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(10) | YES  |     | NULL    |       |
+| gender | varchar(6)  | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+-- run insert.py program -- 
+
+mysql> select * from students;
+Empty set (0.00 sec)
+
+mysql> show engines;
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| FEDERATED          | NO      | Federated MySQL storage engine                                 | NULL         | NULL | NULL       |
+| CSV                | YES     | CSV storage engine                                             | NO           | NO   | NO         |
+| MEMORY             | YES     | Hash based, stored in memory, useful for temporary tables      | NO           | NO   | NO         |
+| BLACKHOLE          | YES     | /dev/null storage engine (anything you write to it disappears) | NO           | NO   | NO         |
+| MyISAM             | YES     | MyISAM storage engine                                          | NO           | NO   | NO         |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables                          | NO           | NO   | NO         |
+| ARCHIVE            | YES     | Archive storage engine                                         | NO           | NO   | NO         |
+| InnoDB             | DEFAULT | Supports transactions, row-level locking, and foreign keys     | YES          | YES  | YES        |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                                             | NO           | NO   | NO         |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+9 rows in set (0.00 sec)
+
+mysql> show create tables students;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tables students' at line 1
+mysql> show create table students;
++----------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                           |
++----------+----------------------------------------------------------------------------------------------------------------------------------------+
+| students | CREATE TABLE `students` (
+  `name` varchar(10) DEFAULT NULL,
+  `gender` varchar(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++----------+----------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+-- run insert.py --- changes made - added - con.commit()
+
+mysql> select * from students;
++-------+--------+
+| name  | gender |
++-------+--------+
+| yugul | m      |
++-------+--------+
+1 row in set (0.00 sec)
+
+- Example - 5.0 years
+
++ Application
+ - program
+   - database (mysql) 
+
+
+CEO - 
+ mysql - sybase ( 3 months)
+ 1 month - db guys - 1week
+ 2 month - programmers - code is done clean.
+ 3 month - QA engineers 
+ 
+ORM - object relation mapping
+
+Sqlalchemy -> youtube.com -> pycon + sqlalchemy

@@ -1,0 +1,723 @@
+1. debugging modes
+
+a) script mode.
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/debugging $ python -m  pdb first.py
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(3)<module>()
+-> version=1.0
+(Pdb)
+
+b) Enhanced script mode (python version 3.3 and above)
+python -m  pdb -c continue first.py
+
+c) run mode (first.py-my_add)
+>> import pdb
+>> pdb.run(first.my_add(a,b))
+
+d) Postmortem mode.
+# python -i first.py
+
+e) trace mode - pdb.set_trace
+
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/debugging $ python first.py
+welcome to the debugging classes.
+i can skip the 24 and 25 line.
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(1,4)
+(Pdb) 
+(Pdb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF    bt         cont      enable  jump  pp       run      unt   
+a      c          continue  exit    l     q        s        until 
+alias  cl         d         h       list  quit     step     up    
+args   clear      debug     help    n     r        tbreak   w     
+b      commands   disable   ignore  next  restart  u        whatis
+break  condition  down      j       p     return   unalias  where 
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+Undocumented commands:
+======================
+retval  rv
+
+(Pdb) help list
+l(ist) [first [,last]]
+List source code for the current file.
+Without arguments, list 11 lines around the current line
+or continue the previous listing.
+With one argument, list 11 lines starting at that line.
+With two arguments, list the given range;
+if the second argument is less than the first, it is a count.
+(Pdb) l
+ 26  	
+ 27  	if __name__ == '__main__':
+ 28  	  print "welcome to the debugging classes."
+ 29  	  print "i can skip the 24 and 25 line."
+ 30  	  pdb.set_trace()
+ 31  ->	  print "addition of two numbers {}".format(1,4)
+ 32  	  print "substraction of two numbers {}".format(10,20)
+ 33  	  print "division of two numbers {}".format(10,2)
+ 34  	  print "multiplication of two numbers {}".format(10,2)
+[EOF]
+(Pdb) l
+[EOF]
+(Pdb) l 1
+  1  	#!/usr/bin/python
+  2  	# pdb.set_trace
+  3  	# to start coding from anywhere.
+  4  	
+  5  	import pdb
+  6  	
+  7  	version=1.0
+  8  	
+  9  	def my_add(a,b):
+ 10  	  print "value of a is {}".format(a)
+ 11  	  print "value of b is {}".format(b)
+(Pdb) l 1,10
+  1  	#!/usr/bin/python
+  2  	# pdb.set_trace
+  3  	# to start coding from anywhere.
+  4  	
+  5  	import pdb
+  6  	
+  7  	version=1.0
+  8  	
+  9  	def my_add(a,b):
+ 10  	  print "value of a is {}".format(a)
+(Pdb) l 22,5
+ 22  	  return a/b
+ 23  	
+ 24  	def my_multi(a,b):
+ 25  	  return a * b
+ 26  	
+ 27  	if __name__ == '__main__':
+
+
+
+(Pdb) help where
+w(here)
+Print a stack trace, with the most recent frame at the bottom.
+An arrow indicates the "current frame", which determines the
+context of most commands.  'bt' is an alias for this command.
+(Pdb) w
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(1,4)
+(Pdb) bt
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(1,4)
+(Pdb) where
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(1,4)
+
+
+(Pdb) help where
+w(here)
+Print a stack trace, with the most recent frame at the bottom.
+An arrow indicates the "current frame", which determines the
+context of most commands.  'bt' is an alias for this command.
+(Pdb) w
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(1,4)
+(Pdb) bt
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(1,4)
+(Pdb) where
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(1,4)
+
+
+(Pdb) help step
+s(tep)
+Execute the current line, stop at the first possible occasion
+(either in a function that is called or in the current function).
+(Pdb) help next
+n(ext)
+Continue execution until the next line in the current function
+is reached or it returns.
+
+
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(my_add(1,4))
+(Pdb) s
+--Call--
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(9)my_add()
+-> def my_add(a,b):
+(Pdb) w
+  /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(my_add(1,4))
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(9)my_add()
+-> def my_add(a,b):
+(Pdb) l
+  4  	
+  5  	import pdb
+  6  	
+  7  	version=1.0
+  8  	
+  9  ->	def my_add(a,b):
+ 10  	  print "value of a is {}".format(a)
+ 11  	  print "value of b is {}".format(b)
+ 12  	  result = a + b
+ 13  	  return result
+ 14  	
+(Pdb) s
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(10)my_add()
+-> print "value of a is {}".format(a)
+(Pdb) w
+  /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(my_add(1,4))
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(10)my_add()
+-> print "value of a is {}".format(a)
+
+
+(Pdb) help p
+p expression
+Print the value of the expression.
+(Pdb) help pp
+pp expression
+Pretty-print the value of the expression.
+
+
+(Pdb) import sys
+(Pdb) new = dir(sys)
+(Pdb) p new
+['__displayhook__', '__doc__', '__excepthook__', '__name__', '__package__', '__stderr__', '__stdin__', '__stdout__', '_clear_type_cache', '_current_frames', '_getframe', '_mercurial', '_multiarch', 'api_version', 'argv', 'builtin_module_names', 'byteorder', 'call_tracing', 'callstats', 'copyright', 'displayhook', 'dont_write_bytecode', 'exc_clear', 'exc_info', 'exc_traceback', 'exc_type', 'exc_value', 'excepthook', 'exec_prefix', 'executable', 'exit', 'flags', 'float_info', 'float_repr_style', 'getcheckinterval', 'getdefaultencoding', 'getdlopenflags', 'getfilesystemencoding', 'getprofile', 'getrecursionlimit', 'getrefcount', 'getsizeof', 'gettrace', 'hexversion', 'long_info', 'maxint', 'maxsize', 'maxunicode', 'meta_path', 'modules', 'path', 'path_hooks', 'path_importer_cache', 'platform', 'prefix', 'py3kwarning', 'pydebug', 'setcheckinterval', 'setdlopenflags', 'setprofile', 'setrecursionlimit', 'settrace', 'stderr', 'stdin', 'stdout', 'subversion', 'version', 'version_info', 'warnoptions']
+(Pdb) pp new
+['__displayhook__',
+ '__doc__',
+ '__excepthook__',
+ '__name__',
+ '__package__',
+ '__stderr__',
+ '__stdin__',
+ '__stdout__',
+ '_clear_type_cache',
+ '_current_frames',
+ '_getframe',
+ '_mercurial',
+ '_multiarch',
+ 'api_version',
+ 'argv',
+ 'builtin_module_names',
+ 'byteorder',
+ 'call_tracing',
+ 'callstats',
+ 'copyright',
+ 'displayhook',
+ 'dont_write_bytecode',
+ 'exc_clear',
+ 'exc_info',
+ 'exc_traceback',
+ 'exc_type',
+ 'exc_value',
+ 'excepthook',
+ 'exec_prefix',
+ 'executable',
+ 'exit',
+ 'flags',
+ 'float_info',
+ 'float_repr_style',
+ 'getcheckinterval',
+ 'getdefaultencoding',
+ 'getdlopenflags',
+ 'getfilesystemencoding',
+ 'getprofile',
+ 'getrecursionlimit',
+ 'getrefcount',
+ 'getsizeof',
+ 'gettrace',
+ 'hexversion',
+ 'long_info',
+ 'maxint',
+ 'maxsize',
+ 'maxunicode',
+ 'meta_path',
+ 'modules',
+ 'path',
+ 'path_hooks',
+ 'path_importer_cache',
+ 'platform',
+ 'prefix',
+ 'py3kwarning',
+ 'pydebug',
+ 'setcheckinterval',
+ 'setdlopenflags',
+ 'setprofile',
+ 'setrecursionlimit',
+ 'settrace',
+ 'stderr',
+ 'stdin',
+ 'stdout',
+ 'subversion',
+ 'version',
+ 'version_info',
+ 'warnoptions']
+
+
+(Pdb) l
+  5  	import pdb
+  6  	
+  7  	version=1.0
+  8  	
+  9  	def my_add(a,b):
+ 10  ->	  print "value of a is {}".format(a)
+ 11  	  print "value of b is {}".format(b)
+ 12  	  result = a + b
+ 13  	  return result
+ 14  	
+ 15  	def my_sub(a,b):
+(Pdb) !a = "today"
+(Pdb) !b = "rocks "
+(Pdb) p a
+'today'
+(Pdb) p b
+'rocks '
+(Pdb) w
+  /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(31)<module>()
+-> print "addition of two numbers {}".format(my_add(1,4))
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(10)my_add()
+-> print "value of a is {}".format(a)
+(Pdb) p a
+1
+(Pdb) !a = "today"
+(Pdb) !b = "rocks "
+(Pdb) p a
+'today'
+(Pdb) p b
+'rocks '
+(Pdb) s
+value of a is today
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(11)my_add()
+-> print "value of b is {}".format(b)
+(Pdb) s
+value of b is rocks 
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(12)my_add()
+-> result = a + b
+(Pdb) s
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(13)my_add()
+-> return result
+(Pdb) s
+--Return--
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(13)my_add()->'todayrocks '
+-> return result
+(Pdb) s
+addition of two numbers todayrocks 
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(32)<module>()
+-> print "substraction of two numbers {}".format(my_sub(10,20))
+
+
+(Pdb) n
+substraction of two numbers 10
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(33)<module>()
+-> print "division of two numbers {}".format(my_div(10,2))
+
+(Pdb) help continue
+c(ont(inue))
+Continue execution, only stop when a breakpoint is encountered.
+(Pdb) c
+division of two numbers 5
+multiplication of two numbers 20
+
+
+(Pdb) help break
+b(reak) ([file:]lineno | function) [, condition]
+With a line number argument, set a break there in the current
+file.  With a function name, set a break at first executable line
+of that function.  Without argument, list all breaks.  If a second
+argument is present, it is a string specifying an expression
+which must evaluate to true before the breakpoint is honored.
+
+The line number may be prefixed with a filename and a colon,
+to specify a breakpoint in another file (probably one that
+hasn't been loaded yet).  The file is searched for on sys.path;
+the .py suffix may be omitted.
+(Pdb) b 33
+Breakpoint 1 at /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py:33
+(Pdb) b my_add
+Breakpoint 2 at /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py:9
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py:33
+2   breakpoint   keep yes   at /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py:9
+(Pdb) l 1,33
+  1  	#!/usr/bin/python
+  2  	# pdb.set_trace
+  3  	# to start coding from anywhere.
+  4  	
+  5  	import pdb
+  6  	
+  7  	version=1.0
+  8  	
+  9 B	def my_add(a,b):
+ 10  	  print "value of a is {}".format(a)
+ 11  	  print "value of b is {}".format(b)
+ 12  	  result = a + b
+ 13  	  return result
+ 14  	
+ 15  	def my_sub(a,b):
+ 16  	  if a > b:
+ 17  	    return a - b
+ 18  	  else:
+ 19  	    return b - a
+ 20  	
+ 21  	def my_div(a,b=1):
+ 22  	  return a/b
+ 23  	
+ 24  	def my_multi(a,b):
+ 25  	  return a * b
+ 26  	
+ 27  	if __name__ == '__main__':
+ 28  	  print "welcome to the debugging classes."
+ 29  	  print "i can skip the 24 and 25 line."
+ 30  	  pdb.set_trace()
+ 31  ->	  print "addition of two numbers {}".format(my_add(1,4))
+ 32  	  print "substraction of two numbers {}".format(my_sub(10,20))
+ 33 B	  print "division of two numbers {}".format(my_div(10,2))
+(Pdb) c
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(10)my_add()
+-> print "value of a is {}".format(a)
+(Pdb) l 1,33
+  1  	#!/usr/bin/python
+  2  	# pdb.set_trace
+  3  	# to start coding from anywhere.
+  4  	
+  5  	import pdb
+  6  	
+  7  	version=1.0
+  8  	
+  9 B	def my_add(a,b):
+ 10  ->	  print "value of a is {}".format(a)
+ 11  	  print "value of b is {}".format(b)
+ 12  	  result = a + b
+ 13  	  return result
+ 14  	
+ 15  	def my_sub(a,b):
+ 16  	  if a > b:
+ 17  	    return a - b
+ 18  	  else:
+ 19  	    return b - a
+ 20  	
+ 21  	def my_div(a,b=1):
+ 22  	  return a/b
+ 23  	
+ 24  	def my_multi(a,b):
+ 25  	  return a * b
+ 26  	
+ 27  	if __name__ == '__main__':
+ 28  	  print "welcome to the debugging classes."
+ 29  	  print "i can skip the 24 and 25 line."
+ 30  	  pdb.set_trace()
+ 31  	  print "addition of two numbers {}".format(my_add(1,4))
+ 32  	  print "substraction of two numbers {}".format(my_sub(10,20))
+ 33 B	  print "division of two numbers {}".format(my_div(10,2))
+(Pdb) c
+value of a is 1
+value of b is 4
+addition of two numbers 5
+substraction of two numbers 10
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py(33)<module>()
+-> print "division of two numbers {}".format(my_div(10,2))
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py:33
+	breakpoint already hit 1 time
+2   breakpoint   keep yes   at /home/tuxfux-hlp/Desktop/batch-46/debugging/first.py:9
+	breakpoint already hit 1 time
+
+
+(Pdb) clear 2
+Deleted breakpoint 2
+(Pdb) clear
+Clear all breaks? y
+(Pdb) b
+
+(Pdb) quit()
+Traceback (most recent call last):
+  File "first.py", line 33, in <module>
+    print "division of two numbers {}".format(my_div(10,2))
+  File "first.py", line 33, in <module>
+    print "division of two numbers {}".format(my_div(10,2))
+  File "/usr/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(5)<module>()
+-> for value in range(1,11):
+(Pdb) l
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	pdb.set_trace()
+  5  ->	for value in range(1,11):
+  6  	  print value
+[EOF]
+(Pdb) b 6
+Breakpoint 1 at /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py:6
+(Pdb) l
+[EOF]
+(Pdb) l 1
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	pdb.set_trace()
+  5  ->	for value in range(1,11):
+  6 B	  print value
+[EOF]
+(Pdb) c
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+1
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+2
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+3
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+4
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+5
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+6
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+7
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+8
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+9
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) c
+10
+Exception AttributeError: "'NoneType' object has no attribute 'path'" in <function _remove at 0x7feba21216e0> ignored
+
+
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(5)<module>()
+-> for value in range(1,11):
+(Pdb) l
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	pdb.set_trace()
+  5  ->	for value in range(1,11):
+  6  	  print value
+[EOF]
+(Pdb) b 6,value == 5
+Breakpoint 1 at /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py:6
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py:6
+	stop only if value == 5
+(Pdb) c
+1
+2
+3
+4
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py(6)<module>()
+-> print value
+(Pdb) p value
+5
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at /home/tuxfux-hlp/Desktop/batch-46/debugging/second.py:6
+	stop only if value == 5
+	breakpoint already hit 5 times
+(Pdb) 
+
+tuxfux-hlp@tuxfuxhlp-VirtualBox ~/Desktop/batch-46/debugging $ python third.py 
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(24)<module>()
+-> first()
+(Pdb) c
+i am in the fifth function
+i am in the fourth function
+i am in the third function
+i am in the second function
+i am in the first function
+
+
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(24)<module>()
+-> first()
+(Pdb) l
+ 19  	  
+ 20  	def fifth():
+ 21  	  print "i am in the fifth function"
+ 22  	  
+ 23  	pdb.set_trace()
+ 24  ->	first()
+ 25  	
+ 26  	
+ 27  	
+ 28  	
+ 29  	
+(Pdb) l 1,24
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	def first():
+  5  	  second()
+  6  	  print "i am in the first function"
+  7  	
+  8  	def second():
+  9  	  third()
+ 10  	  print "i am in the second function"
+ 11  	  
+ 12  	def third():
+ 13  	  fourth()
+ 14  	  print "i am in the third function"
+ 15  	  
+ 16  	def fourth():
+ 17  	  fifth()
+ 18  	  print "i am in the fourth function"
+ 19  	  
+ 20  	def fifth():
+ 21  	  print "i am in the fifth function"
+ 22  	  
+ 23  	pdb.set_trace()
+ 24  ->	first()
+(Pdb) w
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(24)<module>()
+-> first()
+(Pdb) s
+--Call--
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(4)first()
+-> def first():
+(Pdb) s
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(5)first()
+-> second()
+(Pdb) s
+--Call--
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(8)second()
+-> def second():
+(Pdb) s
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(9)second()
+-> third()
+(Pdb) s
+--Call--
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(12)third()
+-> def third():
+(Pdb) s
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(13)third()
+-> fourth()
+(Pdb) s
+--Call--
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(16)fourth()
+-> def fourth():
+(Pdb) s
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(17)fourth()
+-> fifth()
+(Pdb) s
+--Call--
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(20)fifth()
+-> def fifth():
+(Pdb) w
+  /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(24)<module>()
+-> first()
+  /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(5)first()
+-> second()
+  /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(9)second()
+-> third()
+  /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(13)third()
+-> fourth()
+  /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(17)fourth()
+-> fifth()
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(20)fifth()
+
+(Pdb) help up
+u(p)
+Move the current frame one level up in the stack trace
+(to an older frame).
+(Pdb) help down
+d(own)
+Move the current frame one level down in the stack trace
+(to a newer frame).
+(Pdb) up
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(17)fourth()
+-> fifth()
+(Pdb) up
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(13)third()
+-> fourth()
+(Pdb) up
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(9)second()
+-> third()
+(Pdb) up
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(5)first()
+-> second()
+(Pdb) up
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(24)<module>()
+-> first()
+(Pdb) l 24
+ 19  	  
+ 20  	def fifth():
+ 21  	  print "i am in the fifth function"
+ 22  	  
+ 23  	pdb.set_trace()
+ 24  ->	first()
+ 25  	
+ 26  	
+ 27  	
+ 28  	
+ 29  	
+(Pdb) down
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(5)first()
+-> second()
+(Pdb) l 5
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	def first():
+  5  ->	  second()
+  6  	  print "i am in the first function"
+  7  	
+  8  	def second():
+  9  	  third()
+ 10  	  print "i am in the second function"
+ 11  	  
+(Pdb) 
+
+> /home/tuxfux-hlp/Desktop/batch-46/debugging/third.py(24)<module>()
+-> first()
+(Pdb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF    bt         cont      enable  jump  pp       run      unt   
+a      c          continue  exit    l     q        s        until 
+alias  cl         d         h       list  quit     step     up    
+args   clear      debug     help    n     r        tbreak   w     
+b      commands   disable   ignore  next  restart  u        whatis
+break  condition  down      j       p     return   unalias  where 
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+Undocumented commands:
+======================
+retval  rv
+
+
+
+ 
+
